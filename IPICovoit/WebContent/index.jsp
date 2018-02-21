@@ -8,7 +8,7 @@
     <link type="text/css" rel="stylesheet" href="css/styles.css" />
 	<title>TBDC User Manager</title>
 	<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAwXO-yQirtjToPKH-aRvXAngfNFwWE1qc &callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwXO-yQirtjToPKH-aRvXAngfNFwWE1qc &callback=initMap">
     </script>
 </head>
 <body>
