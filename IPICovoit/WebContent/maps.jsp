@@ -8,6 +8,9 @@
 </head>
 <body>
 test
+
+
+<div id="googleMap" style="width:100%;height:400px;"></div>
 <script>
 function myMap() {
 var mapProp= {
@@ -17,7 +20,7 @@ var mapProp= {
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
 </script>
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwXO-yQirtjToPKH-aRvXAngfNFwWE1qc&callback=myMap"></script>
+
 </body>
 </html>
