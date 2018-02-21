@@ -4,10 +4,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>IPICovoit</title>
+<link href="style.css" rel=stylesheet type="text/css">
+<link href="bootstrap/css/bootstrap.min.css" rel=stylesheet type="text/css">
 </head>
 <body>
-test
+
+
+<div class="header">
+	<form class="row connectForm">
+		<h1 class="offset-5">Connexion :</h1>
+		<input type="text" class="col-md-1" placeholder="Identifiant"/>
+		<input type="text" class="col-md-1" placeholder="Mot de passe"/>
+		<input type="submit" class="btn btn-primary" value="Valider"/>
+	</form>
+</div>
+<div class="nav">
+	<div class="logoBg"><img class="logoIpi" src="images/logo-ipi.png" title="super logo"/></div>
+</div>
+
 
 </body>
 </html>
