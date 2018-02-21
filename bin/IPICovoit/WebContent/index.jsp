@@ -7,9 +7,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link type="text/css" rel="stylesheet" href="css/styles.css" />
 	<title>TBDC User Manager</title>
-	<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAwXO-yQirtjToPKH-aRvXAngfNFwWE1qc &callback=initMap">
-    </script>
 </head>
 <body>
    	<c:import url="/WEB-INF/menu/menu.jsp" />
