@@ -121,7 +121,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 		        position: myLatLng,
 		        title: 'Campus'
 		    });
-		    marker.setMap(map);
+		    marker.setMap(map); 
 		    
 //}
 
