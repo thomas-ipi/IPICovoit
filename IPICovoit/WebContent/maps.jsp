@@ -172,7 +172,7 @@ function initialize() {
 		            directionsDisplay.setDirections(response);
 		            directionsDisplay.setOptions({'suppressMarkers':true});
 		        }
-		    });*/
+		    });*/ 
 }
 initialize();
 </script>
