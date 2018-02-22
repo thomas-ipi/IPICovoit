@@ -191,6 +191,5 @@ function initialize() {
 
 test : 
 <div id="map_canvas"></div>
-<div id="latlng"></div>
 </body>
 </html>
