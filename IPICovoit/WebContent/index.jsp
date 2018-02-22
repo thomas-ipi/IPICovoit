@@ -15,9 +15,9 @@
 
 <nav class="navbar navbar-dark bg-dark justify-content-between" style="z-index: 50">
   <a class="navbar-brand" style="color: white; margin-left:20%">IPI'Covoit</a>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="text" placeholder="Identifiant" style="width:150px">
-    <input class="form-control mr-sm-2" type="password" placeholder="Mot de passe" style="width:150px">
+  <form class="form-inline" method="post" action="login">
+    <input class="form-control mr-sm-2" type="text" placeholder="Identifiant" name="id" style="width:150px">
+    <input class="form-control mr-sm-2" type="password" placeholder="Mot de passe" name="mdp" style="width:150px">
     <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Valider</button>
   </form>
 </nav>
