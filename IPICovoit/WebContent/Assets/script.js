@@ -11,7 +11,7 @@ function closeInscription()
 function verifInscription()
 {
 	var telInscription = $('#telInscription').val();
-	if (telInscription == '/^[0-9]*$/'){
+	if (telInscription == /^[0-9]*$/){
 	alert(telInscription);
 	}
 }
