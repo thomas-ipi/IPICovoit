@@ -162,7 +162,7 @@ function initialize() {
 		        });
 		    }
 		    //$('#latlng').text(request);
-		    console.log(directionsService);
+		    console.log(directionsService); 
 		    
 		    /*
 		    var directionsService = new google.maps.DirectionsService();
