@@ -1,70 +1,27 @@
 <div id="map_canvas"></div>
 
- <style>
-   html, body {
-       height: 100%;
-       margin: 0;
-       padding: 0;
-   }
+<style>
+  html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+  }
 
-   #map_canvas {
-       height: 700px;
-       width: 100%;
-      /* margin:50px auto;*/
-   }
-   </style>
+  #map_canvas {
+      height: 700px;
+      width: 100%;
+     /* margin:50px auto;*/
+  }
+ </style>
+  
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwXO-yQirtjToPKH-aRvXAngfNFwWE1qc"></script>
 <script>
-/*function myMap(lat,lng) {
-	var lat = 43.644010;
-	var lng = 1.386933;
-	  var myCenter = new google.maps.LatLng(lat, lng);
-	  var myCenter2 = new google.maps.LatLng(43, 1.33);
-	  var mapCanvas = document.getElementById("map");
-	  var mapOptions = {center: myCenter, zoom: 12};
-	  var map = new google.maps.Map(mapCanvas, mapOptions);
-	  var marker = new google.maps.Marker({position:myCenter});
-	  var marker2 = new google.maps.Marker({position:myCenter2});
-	  marker.setMap(map);
-	  marker2.setMap(map);
-}*/
-/*function initialiser(a,b,c) {
-	var latlng = new google.maps.LatLng(46.779231, 6.659431);
-	
-	var options = {
-		center: latlng,
-		zoom: 19,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	
-	var carte = new google.maps.Map(document.getElementById("carte"), options);
-	
-	
 
-	//redéfinition du centre de la carte
-	carte.setCenter(new google.maps.LatLng(46.779872043155, 6.6497500934796));
-	//redéfinition du zoom
-	carte.setZoom(15);
-	
-	//chemin du tracé
-	var parcoursBus = [
-		new google.maps.LatLng(46.781367900048, 6.6401992834884),
-		new google.maps.LatLng(46.780821285011, 6.6416348016222),
-		new google.maps.LatLng(46.778605381016, 6.6588674582321)
-	];
-	
-	var traceParcoursBus = new google.maps.Polyline({
-		path: parcoursBus,//chemin du tracé
-		strokeColor: "#FF0000",//couleur du tracé
-		strokeOpacity: 1.0,//opacité du tracé
-		strokeWeight: 2//grosseur du tracé
-	});
-	
-	//lier le tracé à la carte
-	//ceci permet au tracé d'être affiché sur la carte
-	traceParcoursBus.setMap(carte);
+$('#direction_campus').on('click',function()
+		{
+			var value = $('#adresse_maison_campus').val();
+		});
 
-}*/
 function initialize() {
 	 var styles = {
 		        'monTheme': [
