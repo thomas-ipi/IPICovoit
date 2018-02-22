@@ -4,7 +4,9 @@
 	import java.util.HashMap;
 	import java.util.Map;
 	import java.sql.*;
-	import javax.servlet.ServletException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 	import javax.servlet.annotation.WebServlet;
 	import javax.servlet.http.HttpServlet;
 	import javax.servlet.http.HttpServletRequest;
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpSession;
 public class Login extends HttpServlet{	
 	private static String FIELD_ID = "id";
 	private static String FIELD_MDP = "mdp";
+	private static String VIEW_PAGES_URL = "/";
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
@@ -47,21 +50,17 @@ public class Login extends HttpServlet{
 	        		   session.setAttribute("mail", rs.getString("mail"));
 	        		   session.setAttribute("telephone", rs.getString("telephone"));
 	        		   session.setAttribute("classe", rs.getString("classe"));
+	        		   connect = true;
+	        		   session.setAttribute("connected", connect);
+
 	        	   }
 	           }
-	        }
-	        
-	        if(!connect)
-	        {
-	        	response.getWriter().append("Mauvais mot de passe ou nom d'utilisateur.");
-	        }
-	        else {
-	        	response.getWriter().append(session.getAttribute("nom").toString()+" est connecté(e)");
 	        }
 	        con.close();
         } catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		this.getServletContext().getRequestDispatcher(VIEW_PAGES_URL).include( request, response );
 	}
 }
