@@ -13,14 +13,15 @@
 <body>
 
 
-<div class="header">
-	<form class="row connectForm">
-		<h1 class="offset-8">Connexion :</h1>
-		<input type="text" class="col-md-1" placeholder="Identifiant"/>
-		<input type="password" class="col-md-1" placeholder="Mot de passe"/>
-		<input type="submit" class="btn btn-primary" value="Valider"/>
-	</form>
-</div>
+<nav class="navbar navbar-dark bg-dark justify-content-between" style="z-index: 50">
+  <a class="navbar-brand" style="color: white; margin-left:20%">IPI'Covoit</a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="text" placeholder="Identifiant" style="width:150px">
+    <input class="form-control mr-sm-2" type="password" placeholder="Mot de passe" style="width:150px">
+    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Valider</button>
+  </form>
+</nav>
+
 <div class="nav">
 	<div class="logoBg"><img class="logoIpi" src="images/logo-ipi.png" title="super logo"/></div>
 	<div class="searchTrajet">BLABLABLABLAAAAAAAAAAAA AAAAAAAAAAAAAAA AAAAAAAAAA AAAAAAAAAAa</div>

@@ -86,3 +86,20 @@ body
 	top: 6%;
 	border: 1px dashed black;
 }
+
+/* Page d'inscription */
+
+.blocInscription
+{
+	padding-top: 1%;
+	position: absolute;
+	top: 50% !important;
+	left: 50% !important;
+  	transform: translate(-50%, -50%);
+	width: 25%;
+	height: 60%;
+	background-color: #343A40;
+	border-radius: 10px;
+	color: white;
+}
+
