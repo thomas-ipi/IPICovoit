@@ -27,7 +27,7 @@ body
     float: right;
 }
 
-/* Page d'inscription */
+/*  Page d'inscription  */
 
 .blocInscription
 {
@@ -38,9 +38,10 @@ body
 	top: 10%;
 	right: 5%;
 	width: 20%;
-	height: 60%;
+	height: auto;
 	background-color: #343A40;
 	border-radius: 10px;
 	color: white;
+	font-size: 1vw;
 }
 
