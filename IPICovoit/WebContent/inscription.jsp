@@ -6,26 +6,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>IPICovoit - Inscription</title>
 <link href="Framework/bootstrap/css/bootstrap.min.css" rel=stylesheet type="text/css">
-<link href="style.css" rel=stylesheet type="text/css">
+<link href="Assets/style.css" rel=stylesheet type="text/css">
 <script type="text/javascript" src="Framework/jquery-3.3.1.min.js"></script>	
 </head>
 <body>
 
-<div class="container blocInscription">
-		<form method="post" class="form-group" action="">
-				<center><h1>Inscription</h1></center><hr/><br>
-				<div class="row" style="margin-left:0px;margin-right:0px">
-					<input type="text" class="form-control col-md-6" placeholder="Nom"/>
-					<input type="text" class="form-control col-md-6" placeholder="Prénom"/>
-				</div><br>
-				<input type="tel" class="form-control" placeholder="Téléphone"/><br>
-				<input type="email" class="form-control" placeholder="Mail"/><br>
-				<input type="text" class="form-control" placeholder="Classe"/><br>
-				<input type="password" class="form-control" placeholder="Mot de Passe"/><br>
-				<input type="password" class="form-control" placeholder="Confirmer le mot de passe"/><br>
-				<center><input type="submit" class="btn" value="Valider"/></center>
-		</form>
-</div>
+<div class="container containerInscription"><div class="blocInscription">
+
+						<label class="sr-only" for="inlineFormInputName2">Name</label>
+						  <input type="text" class="form-control mb-2 mr-md-2" id="inlineFormInputName2" placeholder="Jane Doe">
+						
+						  <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+						  <div class="input-group mb-2 mr-md-2">
+						    <div class="input-group-prepend">
+						      <div class="input-group-text">@</div>
+						    </div>
+						    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
+ 
+
+  </div>  </div>  </div>
 
 </body>
 </html>
