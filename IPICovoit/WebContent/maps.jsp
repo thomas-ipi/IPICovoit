@@ -143,6 +143,28 @@ function initialize() {
 		        title: 'Nantes'
 		    });
 
+		    
+		    origin      = '186 route de grenade'; // Le point départ
+		    destination = 'Paris'; // Le point d'arrivé
+		    var direction = new google.maps.DirectionsRenderer({ 'map': map });
+		    
+		    if(origin && destination){
+		        var request = {
+		            origin      : origin,
+		            destination : destination,
+		            travelMode  : google.maps.DirectionsTravelMode.DRIVING // Mode de conduite
+		        }
+		        var directionsService = new google.maps.DirectionsService(); // Service de calcul d'itinéraire
+		        directionsService.route(request, function(response, status){ // Envoie de la requête pour calculer le parcours
+		            if(status == google.maps.DirectionsStatus.OK){
+		                direction.setDirections(response); // Trace l'itinéraire sur la carte et les différentes étapes du parcours
+		            }
+		        });
+		    }
+		    //$('#latlng').text(request);
+		    console.log(directionsService);
+		    
+		    /*
 		    var directionsService = new google.maps.DirectionsService();
 		    var directionsDisplay = new google.maps.DirectionsRenderer({ 'map': map });
 		    var request = {
@@ -156,7 +178,7 @@ function initialize() {
 		            directionsDisplay.setDirections(response);
 		            directionsDisplay.setOptions({'suppressMarkers':true});
 		        }
-		    });
+		    });*/
 }
 
 </script>
@@ -169,6 +191,6 @@ function initialize() {
 
 test : 
 <div id="map_canvas"></div>
-
+<div id="latlng"></div>
 </body>
 </html>
