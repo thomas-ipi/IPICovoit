@@ -12,18 +12,19 @@
 <body>
 
 <div class="container blocInscription">
-	<form method="post" class="form-group" action="">
-		<center>
-			<h1>Inscription</h1><hr/><br>
-			<input type="text" class="form-control" placeholder="Nom"/><br>
-			<input type="text" class="form-control" placeholder="Prénom"/><br>
-			<input type="tel" class="form-control" placeholder="Téléphone"/><br>
-			<input type="email" class="form-control" placeholder="Mail"/><br>
-			<input type="text" class="form-control" placeholder="Classe"/><br>
-			<input type="password" class="form-control" placeholder="Mot de Passe"/><br>
-			<input type="submit" class="btn" value="Valider"/>
-		</center>
-	</form>
+		<form method="post" class="form-group" action="">
+				<center><h1>Inscription</h1></center><hr/><br>
+				<div class="row" style="margin-left:0px;margin-right:0px">
+					<input type="text" class="form-control col-md-6" placeholder="Nom"/>
+					<input type="text" class="form-control col-md-6" placeholder="Prénom"/>
+				</div><br>
+				<input type="tel" class="form-control" placeholder="Téléphone"/><br>
+				<input type="email" class="form-control" placeholder="Mail"/><br>
+				<input type="text" class="form-control" placeholder="Classe"/><br>
+				<input type="password" class="form-control" placeholder="Mot de Passe"/><br>
+				<input type="password" class="form-control" placeholder="Confirmer le mot de passe"/><br>
+				<center><input type="submit" class="btn" value="Valider"/></center>
+		</form>
 </div>
 
 </body>
