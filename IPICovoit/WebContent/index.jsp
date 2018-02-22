@@ -9,17 +9,20 @@
 <link href="style.css" rel=stylesheet type="text/css">
 <link href="Framework/bootstrap/css/bootstrap.min.css" rel=stylesheet type="text/css">
 <script type="text/javascript" src="Framework/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="Framework/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 
 
 <nav class="navbar navbar-dark bg-dark justify-content-between" style="z-index: 50">
-  <a class="navbar-brand" style="color: white; margin-left:20%">IPI'Covoit</a>
-  <form class="form-inline" method="post" action="login">
-    <input class="form-control mr-sm-2" type="text" placeholder="Identifiant" name="id" style="width:150px">
-    <input class="form-control mr-sm-2" type="password" placeholder="Mot de passe" name="mdp" style="width:150px">
-    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Valider</button>
+  <span class="navbar-brand" style="color: white; margin-left:20%">IPI'Covoit</span>
+  <form class="form-inline" style="margin-left:27%" method="post" action="login">
+  	<span class="navbar-nav" style="width:150px;color:white">Se connecter : </span>
+    <input class="form-control mr-sm-2" type="text" placeholder="Identifiant" style="width:150px">
+    <input class="form-control mr-sm-2" type="password" placeholder="Mot de passe" style="width:150px">
+    <button class="btn btn-danger my-2 my-sm-0" type="submit">Valider</button>
   </form>
+  <span class="navbar-nav" style="color:white;text-decoration:underline;cursor:pointer" onclick="">Pas encore inscrit ?</span>
 </nav>
 
 <div class="nav">
