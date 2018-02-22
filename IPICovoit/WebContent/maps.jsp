@@ -1,11 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<div id="map_canvas"></div>
+
  <style>
    html, body {
        height: 100%;
@@ -14,9 +8,9 @@
    }
 
    #map_canvas {
-       height: 400px;
-       width: 700px;
-       margin:50px auto;
+       height: 700px;
+       width: 100%;
+      /* margin:50px auto;*/
    }
    </style>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwXO-yQirtjToPKH-aRvXAngfNFwWE1qc"></script>
@@ -178,18 +172,11 @@ function initialize() {
 		            directionsDisplay.setDirections(response);
 		            directionsDisplay.setOptions({'suppressMarkers':true});
 		        }
-		    });*/
+		    });*/ 
 }
-
+initialize();
 </script>
-</head>
-<body onload="initialize()">
 
 
 
 
-
-test : 
-<div id="map_canvas"></div>
-</body>
-</html>
