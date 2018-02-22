@@ -23,6 +23,5 @@
 	<div class="logoBg"><img class="logoIpi" src="images/logo-ipi.png" title="super logo"/></div>
 </div>
 
-
 </body>
 </html>
