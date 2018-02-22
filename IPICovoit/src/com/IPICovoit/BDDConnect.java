@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/isConnect")
 public class BDDConnect extends HttpServlet {
 
-	private String connect ()
+	public static Connection connect ()
 	{
 		String response = "";
 		try {
@@ -21,22 +21,26 @@ public class BDDConnect extends HttpServlet {
 			response += "okClass ";
 		}
 		catch (Exception e){
-			return e.getMessage();
+			 e.printStackTrace();
+			 return null;
 		}
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://mysql-ipicoivoir.alwaysdata.net","153687","IPICovoit");
-			//Connection con = DriverManager.getConnection("jdbc:sqlite:C:\\Tools\\SQLITE\\FILENAME","dbo719918772","@Zerty2018");
-			response += "okay";
+			return DriverManager.getConnection("jdbc:mysql://mysql-ipicoivoir.alwaysdata.net","153687","IPICovoit");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			response += e.getMessage();
+			return null;
 		}	
-		return response;
+		
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String con = connect();
-		response.getWriter().append(con);
+		Connection con = connect();
+		try {
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**

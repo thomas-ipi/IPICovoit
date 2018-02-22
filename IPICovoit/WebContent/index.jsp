@@ -16,7 +16,7 @@
 
 <nav class="navbar navbar-dark bg-dark justify-content-between" style="z-index: 50">
   <span class="navbar-brand" style="color: white; margin-left:20%">IPI'Covoit</span>
-  <form class="form-inline" style="margin-left:27%">
+  <form class="form-inline" style="margin-left:27%" method="post" action="login">
   	<span class="navbar-nav" style="width:150px;color:white">Se connecter : </span>
     <input class="form-control mr-sm-2" type="text" placeholder="Identifiant" name="mail" style="width:150px">
     <input class="form-control mr-sm-2" type="password" placeholder="Mot de passe" name="mdp" style="width:150px">
