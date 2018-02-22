@@ -18,8 +18,8 @@
   <span class="navbar-brand" style="color: white; margin-left:20%">IPI'Covoit</span>
   <form class="form-inline" style="margin-left:27%">
   	<span class="navbar-nav" style="width:150px;color:white">Se connecter : </span>
-    <input class="form-control mr-sm-2" type="text" placeholder="Identifiant" style="width:150px">
-    <input class="form-control mr-sm-2" type="password" placeholder="Mot de passe" style="width:150px">
+    <input class="form-control mr-sm-2" type="text" placeholder="Identifiant" name="mail" style="width:150px">
+    <input class="form-control mr-sm-2" type="password" placeholder="Mot de passe" name="mdp" style="width:150px">
     <button class="btn btn-danger my-2 my-sm-0" type="submit">Valider</button>
   </form>
   <span class="navbar-nav" style="color:white;text-decoration:underline;cursor:pointer" onclick="inscription()">Pas encore inscrit ?</span>
