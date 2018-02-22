@@ -161,7 +161,7 @@ function initialize() {
 		            }
 		        });
 		    }
-		    //$('#latlng').text(request);
+		    //$('#latlng').text(request); 
 		    //console.log(directionsService); 
 		    
 		    /*
