@@ -7,7 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>IPICovoit</title>
 <link href="style.css" rel=stylesheet type="text/css">
-<link href="bootstrap/css/bootstrap.min.css" rel=stylesheet type="text/css">
+<link href="Framework/bootstrap/css/bootstrap.min.css" rel=stylesheet type="text/css">
+<script type="text/javascript" src="Framework/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 
