@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>IPICovoit</title>
 <link href="Assets/style.css" rel=stylesheet type="text/css">
+<link href="Assets/fontawesome-all.min.css" rel=stylesheet type="text/css">
 <link href="Framework/bootstrap/css/bootstrap.min.css" rel=stylesheet type="text/css">
 <script type="text/javascript" src="Framework/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="Assets/script.js"></script>
