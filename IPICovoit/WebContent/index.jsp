@@ -70,7 +70,7 @@
 				  <br />
 				  <br /> 
 				  <img src="images/cigarette.png" /> 
-				  <span>Fumeur/Non-fumer :</span>
+				  <span>Fumeur/Non-fumeur :</span>
 				  <br/>
 				  <div class="form-check form-check-inline">
 					  <input class="form-check-input" type="radio" name="f" id="inlineRadio1" value="option1">
@@ -122,7 +122,7 @@
 				  <br />
 				  <br />
 				  <img src="images/cigarette.png" /> 
-				  <span>Fumeur/Non-fumer :</span>
+				  <span>Fumeur/Non-fumeur :</span>
 				  <br/>
 				  <div class="form-check form-check-inline">
 					  <input class="form-check-input" type="radio" name="f" id="inlineRadio1" value="option1">
