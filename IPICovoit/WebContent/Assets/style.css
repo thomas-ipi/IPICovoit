@@ -68,3 +68,8 @@ body
 	left:10px;
 	z-index: 1200;
 }
+
+/* Calendrier */
+#ui-datepicker-div {
+	z-index: 100!important;
+}
