@@ -18,15 +18,26 @@ function verifInscription()
 	if (nomInscription.length <=1)
 	{
 		$('#nomInscription').css('border', '3px solid red');
+		$('#nameHelp').css('display', 'block');
 		errorNom = true;
-	} else {errorNom = false};
+	} else 
+	{
+		$('#nomInscription').css('border', 'none');
+		$('#nameHelp').css('display', 'none');
+		errorNom = false;
+	}
 	
 	if (prenomInscription.length <=1)
 	{
 		$('#prenomInscription').css('border', '3px solid red');
+		$('#nameHelp').css('display', 'block');
 		errorPrenom = true;
-	} else {errorPrenom = false};
-	
+	} else 
+	{
+		$('#prenomInscription').css('border', 'none');
+		$('#nameHelp').css('display', 'none');
+		errorPrenom = false;
+	}
 	
 	/* Vérification téléphone : 10 chiffres + Que des nombres */
 	var telInscription = $('#telInscription').val();
@@ -34,8 +45,14 @@ function verifInscription()
 		if (telInscription.length != 10)
 		{
 			$('#telInscription').css('border', '3px solid red');
+			$('#telHelp').css('display', 'block');
 			errorTel = true;
-		} else {errorTel = false};
+		} else 
+		{
+			$('#telInscription').css('border', 'none');
+			$('#telHelp').css('display', 'none');
+			errorTel = false;
+		}
 	}
 	else
 	{
@@ -50,9 +67,14 @@ function verifInscription()
 	if (extension != '@campus-igs-toulouse.fr')
 	{
 		$('#mailInscription').css('border', '3px solid red');
+		$('#mailHelp').css('display', 'block');
 		errorMail = true;
-	} else {errorMail = false};
-	
+	} else 
+	{
+		$('#mailInscription').css('border', 'none');
+		$('#mailHelp').css('display', 'none');
+		errorMail = false;
+	}
 	
 	/* Vérification si mots de passe identiques*/
 	var mdp1Inscription = $('#mdp1Inscription').val();
@@ -62,9 +84,27 @@ function verifInscription()
 	{
 		$('#mdp1Inscription').css('border', '3px solid red');
 		$('#mdp2Inscription').css('border', '3px solid red');
+		$('#mdpHelp2').css('display', 'block');
 		errorMdp = true;
-	} else {errorMdp = false};
-	
+	} else 
+	{
+		if (mdp1Inscription.length <=4)
+			{
+				$('#mdp1Inscription').css('border', '3px solid red');
+				$('#mdp2Inscription').css('border', '3px solid red');
+				$('#mdpHelp2').css('display', 'none');
+				$('#mdpHelp1').css('display', 'block');
+				errorMdp = true;
+			}
+		else
+			{
+				$('#mdp1Inscription').css('border', 'none');
+				$('#mdp2Inscription').css('border', 'none');
+				$('#mdpHelp1').css('display', 'none');
+				$('#mdpHelp2').css('display', 'none');
+				errorMdp = false;
+			}
+	}
 	
 	/* Return final */
 	if (errorNom == false && errorPrenom == false && errorTel == false && errorMail == false && errorMdp == false)
