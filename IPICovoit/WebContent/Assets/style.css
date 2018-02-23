@@ -45,3 +45,12 @@ body
 	font-size: 1vw;
 }
 
+
+
+/* Bloc maps - Audrey */
+
+#map_canvas {
+    height: 700px;
+    width: 100%;
+ }
+
