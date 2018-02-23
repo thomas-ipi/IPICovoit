@@ -65,6 +65,7 @@ function verifInscription()
 		errorMdp = true;
 	} else {errorMdp = false};
 	
+	
 	/* Return final */
 	if (errorNom == false && errorPrenom == false && errorTel == false && errorMail == false && errorMdp == false)
 		{
