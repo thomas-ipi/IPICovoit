@@ -12,10 +12,14 @@
 <script type="text/javascript" src="Framework/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="Framework/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="Assets/script.js"></script>
+<link rel="stylesheet"
+href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>	
 <body>
 <nav class="navbar navbar-dark bg-dark justify-content-between" style="z-index: 50">
-  <span class="navbar-brand" style="color: white; margin-left:20%">IPI'Covoit</span>
+  <span class="navbar-brand" style="color: white; margin-left:20%"><a href="/IPICovoit/">Accueil</a></span>
 	<c:choose>
 		<c:when test = "${nom == null}">
 			<form class="form-inline" style="margin-left:27%" method="post" action="login">
@@ -27,8 +31,12 @@
 			<span class="navbar-nav" style="color:white;text-decoration:underline;cursor:pointer" onclick="inscription()">Pas encore inscrit ?</span>
 		</c:when>
 		<c:when test = "${nom != null}">
+			
 			<form class="form-inline" style="margin-left:27%" method="post" action="logout">
-				<span class="navbar-nav" style="width:150px;color:white">Bienvenue à toi ${prenom}</span>
+				<a class="ico-profile" href="/IPICovoit/profile.jsp">
+					<i class="fas fa-user-circle"></i>
+					<span class="navbar-nav" style="width:150px;color:white">Bienvenue à toi ${prenom}</span>
+				</a>
 				<button class="btn btn-danger my-2 my-sm-0" type="submit">Deconnexion</button>
 			</form>
 		</c:when>

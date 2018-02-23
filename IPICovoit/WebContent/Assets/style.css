@@ -67,13 +67,32 @@ body
 	top:10px;
 	left:10px;
 	z-index: 1200;
-<<<<<<< HEAD
-}
-=======
 }
 
 /* Calendrier */
 #ui-datepicker-div {
 	z-index: 100!important;
 }
->>>>>>> branch 'master' of https://github.com/thomas-ipi/IPICovoit.git
+
+.ico-profile{
+	display:flex;
+}
+
+.navbar a{
+	color:white;
+}
+.navbar a:hover{
+	text-decoration:none;
+	color:#F22B29;
+}
+.ico-profile i:hover{
+	color:#F22B29;
+}
+
+.ico-profile i {
+    color: white;
+    margin: 5px;
+    align-self: center;
+    font-size: 25pt;
+    margin-right: 15px;
+}
