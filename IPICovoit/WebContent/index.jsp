@@ -4,7 +4,7 @@
 <c:import url="/WEB-INF/Shared/header.jsp" />
 <div class="container-fluid">
 	<div class="row">
-	<div style="width: 20%; z-index: 100">
+	<div class="nav1">
 		<!-- <div class="" style="text-align: center; z-index: 100;">
 			<img class="" src="images/Logo-IPIcovoit-couleur.png" title="super logo" style="background-color:white; padding: 20px 40px; width: 50%; border-radius: 4px; margin-top: 20px;" />
 		</div> -->
@@ -152,9 +152,6 @@
 
 
 	</div>
-	
-	<div class="nav1" style="z-index: 0">
-	</div>	
 	
 	<div class="nav2" style="z-index: 0">
 		<div class="maps"><c:import url="maps.jsp"/></div>
