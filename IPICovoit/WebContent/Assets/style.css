@@ -57,3 +57,10 @@ body
     width: 100%;
  }
 
+/* Alert Bootstrap */
+.alert{
+	position : fixed !important;
+	top:10px;
+	left:10px;
+	z-index: 1200;
+}
