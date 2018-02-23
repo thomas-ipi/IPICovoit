@@ -32,11 +32,15 @@
 		
 		<div style="margin-top: 90px;">
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
-		  <li class="nav-item">
-		    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="color: black"><b>Passager</b></a>
+		  <li class="nav-item" style="width:50%">
+		    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="color: black">
+		    <i class="fas fa-user"></i><b> Passager</b>
+		    </a>
 		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="color: black"><b>Conducteur</b></a>
+		  <li class="nav-item" style="width:50%">
+		    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="color: black">
+		    <img src="images/conducteur.png" /> <b>Conducteur</b>
+		    </a>
 		  </li>
 		</ul>
 		
