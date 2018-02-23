@@ -43,7 +43,7 @@ body
 	border-radius: 10px;
 	color: white;
 	font-size: 1vw;
-}
+} 
 
 .containerInscription{
 	display:none;
@@ -67,4 +67,13 @@ body
 	top:10px;
 	left:10px;
 	z-index: 1200;
+<<<<<<< HEAD
 }
+=======
+}
+
+/* Calendrier */
+#ui-datepicker-div {
+	z-index: 100!important;
+}
+>>>>>>> branch 'master' of https://github.com/thomas-ipi/IPICovoit.git

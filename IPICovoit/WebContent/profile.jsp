@@ -18,7 +18,7 @@
   <form method="post" action="editProfile">
     <div class="form-group">
 	    <label for="nom">Nom :</label>
-	    <input type="text" class="form-control" id="nom" name="nomProfile" placeholder="${nom}">
+	    <input type="text" class="form-control" id="nom" name="nomProfile" value="${nom}">
     </div>
   	<div class="form-group">
 	    <label for="prenom">Prénom :</label>
