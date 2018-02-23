@@ -55,8 +55,12 @@ body
 #map_canvas {
     height: 700px;
     width: 100%;
- }
+}
 
+#map_indic {
+    height: 300px;
+    width: 100%;
+}
 /* Alert Bootstrap */
 .alert{
 	position : fixed !important;

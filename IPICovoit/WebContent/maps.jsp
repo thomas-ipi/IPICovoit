@@ -1,6 +1,7 @@
 <div id="map_canvas"></div>
-
+ 
 <script>
+
 
 /*
  * INITIALISER MAPS
@@ -49,7 +50,7 @@ function initMap() {
 	            ]
 	        }
 	    ]};
-	
+	 
 	var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var map = new google.maps.Map(document.getElementById('map_canvas'), {
@@ -90,5 +91,3 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwXO-yQirtjToPKH-aRvXAngfNFwWE1qc&callback=initMap"></script>
-
-
