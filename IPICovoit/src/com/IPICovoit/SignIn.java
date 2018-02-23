@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/SignIn")
+@WebServlet("/signIn")
 public class SignIn extends HttpServlet{
 	private static String VIEW_PAGES_URL = "/";
 	private static String FIELD_NOM = "nom";
@@ -36,7 +36,7 @@ public class SignIn extends HttpServlet{
 		String mdp = request.getParameter(FIELD_MDP);
 		String phone = request.getParameter(FIELD_PHONE);
 		String classe = request.getParameter(FIELD_CLASSE);
-		String sql = "INSERT INTO `User` (`nom`, `prenom`, `telephone`, `mail`, `classe`, `mdp`) VALUES ('"+nom+"', '"+prenom+"', '"+phone+"', '"+mail+"', '"+classe+"', '"+mdp+"')";
+		String sql = "INSERT INTO ipicoivoir_bdd.User (`nom`, `prenom`, `telephone`, `mail`, `classe`, `mdp`) VALUES ('"+nom+"', '"+prenom+"', '"+phone+"', '"+mail+"', '"+classe+"', '"+mdp+"')";
 		
 		try {
 			Connection con = BDDConnect.connect();

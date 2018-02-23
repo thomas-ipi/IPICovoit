@@ -45,6 +45,9 @@ body
 	font-size: 1vw;
 }
 
+.containerInscription{
+	display:none;
+}
 
 
 /* Bloc maps - Audrey */
