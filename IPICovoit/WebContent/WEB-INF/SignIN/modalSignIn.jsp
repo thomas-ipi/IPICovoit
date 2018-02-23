@@ -1,9 +1,9 @@
 <div class="container containerInscription">
 	<div class="blocInscription">
-		<form method="post" class="form-group" action="signIn">
+		<form method="post" class="form-group" onsubmit="return verifInscription()" action="signIn">
 			<center>
 				<h2>Inscription
-				<input value="X" style="max-width:40px;margin-left:10%;margin-top:-10px" class="btn btn-danger" onclick="closeInscription()"/></h2>
+				<input value="X" style="max-width:40px;margin-left:10%;margin-top:-10px" class="btn btn-danger"/></h2>
 			</center>
 			<hr/><br>
 			<div class="row" style="margin-left:0px;margin-right:0px">
@@ -16,7 +16,7 @@
 			<input type="password" class="form-control"  id="mdp1Inscription" placeholder="Mot de Passe" name="mdp"/><br>
 			<input type="password" class="form-control"  id="mdp2Inscription" placeholder="Confirmer le mot de passe"/><br>
 			<center>
-				<input onclick="verifInscription()" type="submit" class="btn btn-danger" value="Valider"/>
+				<input type="submit" class="btn btn-danger" value="Valider"/>
 			</center>
 		</form>
 	</div>
