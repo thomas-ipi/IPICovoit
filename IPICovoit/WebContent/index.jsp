@@ -30,7 +30,7 @@
 		
 		
 		
-		<div style="margin-top: 90px;">
+		<div style="margin-top: 5em;">
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 		  <li class="nav-item" style="width:50%">
 		    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="color: black">
@@ -50,7 +50,7 @@
 				  <div class="form-group">
 				  <i class="fas fa-map-marker"></i>
 					    <label for="exampleInputEmail1">Mon adresse</label>
-					    <input type="text" id="adresse_maison_campus" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse">
+					    <input type="text" id="adresse_passager" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse">
 				  </div>
 				  <i class="fas fa-arrows-alt-h"></i>
 				  <span>Aller/Retour :</span>
@@ -102,7 +102,7 @@
 				  <div class="form-group">
 				  <i class="fas fa-map-marker"></i>
 					    <label for="exampleInputEmail1">Mon adresse</label>
-					    <input type="text" id="adresse_maison_campus" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse">
+					    <input type="text" id="adresse_conducteur" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse">
 				  </div>
 				  <i class="fas fa-arrows-alt-h"></i>
 				  <span>Aller/Retour :</span>

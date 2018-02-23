@@ -77,7 +77,7 @@ function initMap() {
  */
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     directionsService.route({
-      origin: document.getElementById('adresse_maison_campus').value,
+      origin: document.getElementById('adresse_passager').value,
       destination: '186 route de grenade, 31700',
       travelMode: 'DRIVING'
     }, function(response, status) {
