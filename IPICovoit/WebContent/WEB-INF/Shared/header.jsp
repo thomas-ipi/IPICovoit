@@ -27,8 +27,12 @@
 			<span class="navbar-nav" style="color:white;text-decoration:underline;cursor:pointer" onclick="inscription()">Pas encore inscrit ?</span>
 		</c:when>
 		<c:when test = "${nom != null}">
+			
 			<form class="form-inline" style="margin-left:27%" method="post" action="logout">
-				<span class="navbar-nav" style="width:150px;color:white">Bienvenue à toi ${prenom}</span>
+				<a class="ico-profile" href="/profile.jsp">
+					<i class="fas fa-user-circle"></i>
+					<span class="navbar-nav" style="width:150px;color:white">Bienvenue à toi ${prenom}</span>
+				</a>
 				<button class="btn btn-danger my-2 my-sm-0" type="submit">Deconnexion</button>
 			</form>
 		</c:when>
