@@ -11,7 +11,7 @@
 			<img class="" src="images/logo-ipi.png" title="super logo" style="background-color:white; padding: 20px 40px; width: 50%; border-radius: 4px; margin-top: 20px;" />
 		</div>
 		
-		<div style="margin-top: 90px;">
+		<!--<div style="margin-top: 90px;">
 			<div class="card" style="width: 90%; margin: auto">
 				 <div class="card-header"><b>Je vais au campus</b></div>
 				 <div class="card-body">
@@ -24,26 +24,37 @@
 				</div>
 				 </div>
 			</div>
+		</div>  -->
+		
+		
+		
+		<div style="margin-top: 90px;">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		  <li class="nav-item">
+		    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Passager</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Conducteur</a>
+		  </li>
+		</ul>
+		
+		<div class="tab-content" id="myTabContent" style="background-color: white; padding: 30px 20px"> 
+		  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+		  	test
+		  	test
+		  </div>
+		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+		  	test
+		  	test
+		  </div>
 		</div>
-		<div style="margin-top: 30px;">
-			<div class="card" style="width: 90%; margin: auto">
-				 <div class="card-header"><b>Je rentre chez moi</b></div>
-				 <div class="card-body">
-					<div id="direction_maison">
-					  <div class="form-group">
-						    <label for="exampleInputEmail1">Mon adresse</label>
-						    <input type="text" id="adresse_campus_maison" name="adresse_campus_maison" class="form-control" placeholder="Renseigne ton adresse">
-					  </div>
-					  <button type="button" class="btn btn-outline-danger" style="float: right">Go</button>
-					</div>
-				 </div>
-			</div>
 		</div>
 
-		
+
+
 	</div>
 	
-	<div class="nav" style="z-index: 0">
+	<div class="nav1" style="z-index: 0">
 	</div>	
 	
 	<div class="nav2" style="z-index: 0">
