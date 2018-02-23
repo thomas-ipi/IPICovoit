@@ -76,6 +76,7 @@ body
 
 .ico-profile{
 	display:flex;
+	align-items: center;
 }
 
 .navbar a{
