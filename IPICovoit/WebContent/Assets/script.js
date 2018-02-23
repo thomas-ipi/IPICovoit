@@ -10,8 +10,27 @@ function closeInscription()
 
 function verifInscription()
 {
+	/* Vérification téléphone : 10 chiffres + Que des nombres */
 	var telInscription = $('#telInscription').val();
-	if (telInscription == /^[0-9]*$/){
-	alert(telInscription);
+	if (((/^[0-9]*$/.test(telInscription)) == true)){
+		if (telInscription.length == 10)
+		{
+			return true;
+		} 
+		else
+		{
+			alert('Erreur: le numéro de téléphone ne contient pas 10 chiffres.');
+			return false;
+		}
 	}
+	else
+	{
+		alert('Erreur: le numéro de téléphone ne doit contenir que des chiffres.');
+		return false;
+	}
+	
+	
+	/* Vérification si l'extension mail est bien "campus-igs-toulouse.fr" */
+	var mailInscription = $('#mailInscription').val();
+	
 }
