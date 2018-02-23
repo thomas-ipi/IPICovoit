@@ -44,9 +44,13 @@ href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <div class="container-fluid">
 	<div class="row">
 	<div style="width: 20%; z-index: 100">
-		<div class="" style="text-align: center; z-index: 100;">
-			<img class="" src="images/logo-ipi.png" title="super logo" style="background-color:white; padding: 20px 40px; width: 50%; border-radius: 4px; margin-top: 20px;" />
+		<!-- <div class="" style="text-align: center; z-index: 100;">
+			<img class="" src="images/Logo-IPIcovoit-couleur.png" title="super logo" style="background-color:white; padding: 20px 40px; width: 50%; border-radius: 4px; margin-top: 20px;" />
+		</div> -->
+		<div style="text-align: center; z-index: 100;">
+			<img class="" src="images/Logo-IPIcovoit-blanc.png" style="width: 75%; margin-top: 20px;"/>
 		</div>
+	
 		
 		<!--<div style="margin-top: 90px;">
 			<div class="card" style="width: 90%; margin: auto">
@@ -87,15 +91,15 @@ href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 				  <span>Aller/Retour :</span>
 				  
 				  <br /><div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="option1">
 					  <label class="form-check-label" for="inlineRadio1">Aller</label>
 				  </div>
 				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="option2">
 					  <label class="form-check-label" for="inlineRadio2">Retour</label>
 				  </div>
 				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <input class="form-check-input" type="radio" name=ar id="inlineRadio2" value="option2">
 					  <label class="form-check-label" for="inlineRadio2">Aller & Retour</label>
 				  </div>
 				  <br />
@@ -104,15 +108,15 @@ href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 				  <span>Fumeur/Non-fumer :</span>
 				  <br/>
 				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+					  <input class="form-check-input" type="radio" name="f" id="inlineRadio1" value="option1">
 					  <label class="form-check-label" for="inlineRadio1">Fumeur</label>
 				  </div>
 				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <input class="form-check-input" type="radio" name="f" id="inlineRadio2" value="option2">
 					  <label class="form-check-label" for="inlineRadio2">Non-fumeur</label>
 				  </div>
 				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <input class="form-check-input" type="radio" name="f" id="inlineRadio2" value="option2">
 					  <label class="form-check-label" for="inlineRadio2">Peu importe</label>
 				  </div>
 				  <br/>
@@ -120,7 +124,7 @@ href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 				  <div class="form-group">
 				  <i class="fas fa-calendar-alt"></i>
 				    <label for="prenom">Date :</label>
-				    <input type="text" class="form-control" id="date_trajet" name="date_trajet">
+				    <input type="text" class="form-control date_trajet" id="" name="date_trajet">
 			  	  </div>
 				  
 
@@ -129,8 +133,53 @@ href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 			</div>
 		  </div>
 		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-		  	test
-		  	test
+		  	<div>
+				  <div class="form-group">
+				  <i class="fas fa-map-marker"></i>
+					    <label for="exampleInputEmail1">Mon adresse</label>
+					    <input type="text" id="adresse_maison_campus" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse">
+				  </div>
+				  <i class="fas fa-arrows-alt-h"></i>
+				  <span>Aller/Retour :</span>
+				  
+				  <br /><div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="option1">
+					  <label class="form-check-label" for="inlineRadio1">Aller</label>
+				  </div>
+				  <div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="option2">
+					  <label class="form-check-label" for="inlineRadio2">Retour</label>
+				  </div>
+				  <div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="option2">
+					  <label class="form-check-label" for="inlineRadio2">Aller & Retour</label>
+				  </div>
+				  <br />
+				  <br />
+				  <img src="images/cigarette.png" /> 
+				  <span>Fumeur/Non-fumer :</span>
+				  <br/>
+				  <div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="f" id="inlineRadio1" value="option1">
+					  <label class="form-check-label" for="inlineRadio1">Fumeur</label>
+				  </div>
+				  <div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="f" id="inlineRadio2" value="option2">
+					  <label class="form-check-label" for="inlineRadio2">Non-fumeur</label>
+				  </div>
+				  <br/>
+				  <br/>
+				  <div class="form-group">
+				  <i class="fas fa-calendar-alt"></i>
+				    <span>Du </span>
+				    <input type="text" class="form-control date_trajet" id="" name="date_trajet">
+				    <span> au </span>
+				    <input type="text" class="form-control date_trajet" id="" name="date_trajet">
+			  	  </div>
+			  	  
+				  <button id="direction_campus" type="button" class="btn btn-outline-danger" style="float: right">Go</button>
+				  <br/>
+			</div>
 		  </div>
 		</div>
 		</div>
@@ -153,7 +202,7 @@ href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <c:import url="/WEB-INF/alert/alertBootstrap.jsp" />
 <script>
 $( function() {
-  $( "#date_trajet" ).datepicker();
+  $( ".date_trajet" ).datepicker();
 } );
 </script>
 
