@@ -30,7 +30,7 @@ function verifInscription()
 	}
 	
 	
-	/* Vérification si l'extension mail est bien "campus-igs-toulouse.fr" */
+	/* Vérification si l'extension mail est bien "@campus-igs-toulouse.fr" */
 	var mailInscription = $('#mailInscription').val();
 	
 }
