@@ -14,7 +14,9 @@ body
 	width: 20%;
 	background-color: #F22B29;
 	top: 0px;
-    z-index: 100
+    z-index: 100;
+   	top: 55px;
+    position: absolute;
 }
 .nav2
 {
@@ -23,6 +25,7 @@ body
 	top: 0px;
     z-index: 0;
     float: right;
+    margin-left: 20%;
 } 
 
 /*  Page d'inscription  */
@@ -51,7 +54,7 @@ body
 /* Bloc maps - Audrey */
 
 #map_canvas {
-    height: 780px;
+    height: 760px;
     width: 100%;
 }
 
