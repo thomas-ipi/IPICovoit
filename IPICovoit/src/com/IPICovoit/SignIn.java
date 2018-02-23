@@ -16,12 +16,12 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/signIn")
 public class SignIn extends HttpServlet{
 	private static String VIEW_PAGES_URL = "/";
-	private static String FIELD_NOM = "nom";
-	private static String FIELD_PRENOM = "prenom";
-	private static String FIELD_MAIL = "mail";
-	private static String FIELD_MDP = "mdp";
-	private static String FIELD_CLASSE = "classe";
-	private static String FIELD_PHONE = "phone";
+	private static String FIELD_NOM = "nomSign";
+	private static String FIELD_PRENOM = "prenomSign";
+	private static String FIELD_MAIL = "mailSign";
+	private static String FIELD_MDP = "mdpSign";
+	private static String FIELD_CLASSE = "classeSign";
+	private static String FIELD_PHONE = "phoneSign";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
