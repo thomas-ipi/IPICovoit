@@ -86,5 +86,4 @@
   </div>
 </div>
 
-<c:import url="/WEB-INF/Shared/footer.jsp" />
 <c:import url="/WEB-INF/alert/alertBootstrap.jsp" />
