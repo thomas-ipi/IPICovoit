@@ -85,7 +85,7 @@
 	</div>
 	
 </div>
-
+<c:import url="/WEB-INF/SignIN/modalSignIn.jsp" />
 
 </body>
 </html>
