@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/editProfile")
 public class editProfile extends HttpServlet  {
@@ -21,16 +22,21 @@ public class editProfile extends HttpServlet  {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		String nom = request.getParameter(FIELD_NOM);
 		String prenom = request.getParameter(FIELD_PRENOM);
-		String mail = request.getParameter(FIELD_MAIL);
+		String mail = request.getSession().getAttribute("mail").toString();
 		String phone = request.getParameter(FIELD_PHONE);
 		String adresse = request.getParameter(FIELD_ADRESSE);
 		String sql = "UPDATE ipicoivoir_bdd.User SET nom='"+nom+"',prenom='"+prenom+"', telephone='"+phone+"', adresse='"+adresse+"' WHERE mail='"+mail+"'";
+		HttpSession session = request.getSession();
 		try {
 			Connection con = BDDConnect.connect();
 			Statement stmt;
 			stmt = con.createStatement();
 			stmt.executeUpdate(sql);
 			con.close();
+			session.setAttribute("nom", nom);
+			session.setAttribute("prenom", prenom);
+			session.setAttribute("telephone", phone);
+			session.setAttribute("adresse", adresse);
 			request.setAttribute("successMessage", "Profile mis à jour.");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
