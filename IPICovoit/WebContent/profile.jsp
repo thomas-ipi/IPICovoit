@@ -43,48 +43,6 @@
   </form>
   </div>
 </div>
+<br>
 
-<div class="card" style="width: 80%; margin: auto">
-  <div class="card-header">
-    MON TRAJET EN TANT QUE CONDUCTEUR
-  </div>
-  <div class="card-body">
-  <form> 
-  <div class="form-check form-check-inline">
-	  <input class="form-check-input" type="radio" name="aller_retour" id="inlineRadio1" value="aller">
-	  <label class="form-check-label">Aller</label>
-	</div>
-	<div class="form-check form-check-inline">
-	  <input class="form-check-input" type="radio" name="aller_retour" id="inlineRadio2" value="retour">
-	  <label class="form-check-label">Retour</label>
-	</div>
-	<div class="form-check form-check-inline">
-	  <input class="form-check-input" type="radio" name="aller_retour" id="inlineRadio3" value="aller_retour">
-	  <label class="form-check-label">Aller & Retour</label>
-	</div>
-	<br/> 
-	<br />
-    <div class="form-group">
-	    <label for="nom">Nombre de place :</label>
-	    <input type="text" class="form-control" id="nom" value="recup nombre place">
-    </div>
-  	<div class="form-group">
-	    <label for="prenom">Date :</label>
-	    <input type="text" class="form-control" id="datepicker" name="datepicker" value="recup date">
-  	</div>
-  	<div class="form-check form-check-inline">
-	  <input class="form-check-input" type="radio" name="fumeur" id="fumeurO" value="1">
-	  <label class="form-check-label">Fumeur</label>
-	</div>
-	<div class="form-check form-check-inline">
-	  <input class="form-check-input" type="radio" name="fumeur" id="fumerN" value="0">
-	  <label class="form-check-label">Non-fumeur</label>
-	</div>
-  	<br />
-  	<a href="#" class="btn btn-outline-dark" type="submit" style="float: right">Modifier mon trajet</a>
-  </form>
-  </div>
-</div>
-
-<c:import url="/WEB-INF/Shared/footer.jsp" />
 <c:import url="/WEB-INF/alert/alertBootstrap.jsp" />

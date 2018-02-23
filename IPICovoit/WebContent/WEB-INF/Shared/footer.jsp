@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark" style="z-index:50; width: 80%;position:absolute;height:12%;right:0px;bottom:0px">
+<nav class="navbar navbar-dark bg-dark" style="z-index:50; width: 80%;position:fixed;height:12%;right:0px;bottom:0px">
 		<div class="row justify-content-end">
 		
 		<div style="position:absolute;top:10%;left:5%;">
@@ -11,10 +11,10 @@
 		</div><br>
 		
 		<div style="position:absolute;top:10%;right:0px;">
-			<i class="fas fa-map-marker-alt" style="color:white;font-size:1.5vw;margin-right:6px;"></i>
-			<span class="navbar-brand" style="color: white; font-size:0.8vw">Groupe IGS, Ecole IPI</span><br>
-			<span class="navbar-brand" style="color: white; font-size:0.8vw">Toulouse - 186 Route de Grenade</span><br>
-			<span class="navbar-brand" style="color: white; font-size:0.8vw">31703 Blagnac Cedex</span>
+			<i class="fas fa-map-marker-alt" style="color:white;font-size:1.2vw;margin-right:6px;"></i>
+			<span class="navbar-brand" style="color: white; font-size:0.7vw">Groupe IGS, Ecole IPI</span><br>
+			<span class="navbar-brand" style="color: white; font-size:0.7vw">Toulouse - 186 Route de Grenade</span><br>
+			<span class="navbar-brand" style="color: white; font-size:0.7vw">31703 Blagnac Cedex</span>
 		</div>
 	</div>
 </nav> 
