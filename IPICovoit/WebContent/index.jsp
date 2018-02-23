@@ -10,6 +10,7 @@
 <link href="Assets/fontawesome-all.min.css" rel=stylesheet type="text/css">
 <link href="Framework/bootstrap/css/bootstrap.min.css" rel=stylesheet type="text/css">
 <script type="text/javascript" src="Framework/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="Framework/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="Assets/script.js"></script>
 </head>
 <body>
@@ -86,6 +87,7 @@
 	
 </div>
 <c:import url="/WEB-INF/SignIN/modalSignIn.jsp" />
+<c:import url="/WEB-INF/alert/alertBootstrap.jsp" />
 
 </body>
 </html>

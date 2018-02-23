@@ -57,9 +57,17 @@ public class Login extends HttpServlet{
 	           }
 	        }
 	        con.close();
+	        if(connect) {
+	            request.setAttribute("successMessage", "Vous venez de vous connecter.");
+	        }
+	        else
+	        {
+	        	request.setAttribute("errorMessage", "Mauvais Id ou MDP");
+	        }
         } catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			request.setAttribute("errorMessage", "Impossible de se connecter, veuiller réessayer ultérieurement.");
 		}
 		this.getServletContext().getRequestDispatcher(VIEW_PAGES_URL).include( request, response );
 	}
