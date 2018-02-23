@@ -11,6 +11,21 @@ function closeInscription()
 
 function verifInscription()
 {
+	/* Vérification nom + prénom : mini 2 caractères */
+	var nomInscription = $('#nomInscription').val();
+	var prenomInscription = $('#prenomInscription').val();
+	if (nomInscription.length <=1)
+	{
+		$('#nomInscription').css('border', '4px solid red');
+		return false;
+	} else
+		{
+			return true;
+		}
+	
+	
+	
+	
 	/* Vérification téléphone : 10 chiffres + Que des nombres */
 	var telInscription = $('#telInscription').val();
 	if (((/^[0-9]*$/.test(telInscription)) == true)){
@@ -20,17 +35,20 @@ function verifInscription()
 		} 
 		else
 		{
-			alert('Erreur: le numéro de téléphone ne contient pas 10 chiffres.');
+			$('#telInscription').css('border', '4px solid red');
 			return false;
 		}
 	}
 	else
 	{
-		alert('Erreur: le numéro de téléphone ne doit contenir que des chiffres.');
+		$('#telInscription').css('border', '4px solid red');
 		return false;
 	}
 	
 	
 	/* Vérification si l'extension mail est bien "@campus-igs-toulouse.fr" */
-	var mailInscription = $('#mailInscription').val();	
+
+	var mailInscription = $('#mailInscription').val();
+	alert(mailInscription);
+	
 }
