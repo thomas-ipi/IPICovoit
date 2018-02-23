@@ -64,7 +64,7 @@
 					  <label class="form-check-label" for="inlineRadio2">Aller & Retour</label>
 				  </div>
 				  <br />
-				  <br />
+				  <br /> 
 				  <img src="images/cigarette.png" /> 
 				  <span>Fumeur/Non-fumer :</span>
 				  <br/>
