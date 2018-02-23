@@ -71,7 +71,7 @@ function initMap() {
       //document.getElementById('end').addEventListener('change', onChangeHandler);
 }
 
-/*
+/* 
  * FAIRE LE TRAJET DEMANDE
  */
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
