@@ -9,16 +9,16 @@
 
 <c:import url="/WEB-INF/Shared/header.jsp" />
 <br/>
-<br/>
+<br/><i class="fab fa-accessible-icon"></i>
 <div class="card" style="width: 80%; margin: auto">
   <div class="card-header">
     MON PROFIL
   </div>
   <div class="card-body">
-  <form method="post" action="signIn">
+  <form method="post" action="editProfile">
     <div class="form-group">
 	    <label for="nom">Nom :</label>
-	    <input type="text" class="form-control" id="nom" name="nomProfile" value="${nom}">
+	    <input type="text" class="form-control" id="nom" name="nomProfile" placeholder="${nom}">
     </div>
   	<div class="form-group">
 	    <label for="prenom">Prénom :</label>
@@ -40,7 +40,7 @@
 	    <input type="text" class="form-control" id="adresse" name="telephoneProfile" value="${telephone}">
   	</div>
   	<br />
-  	<a href="#" class="btn btn-outline-dark" style="float: right">Modifier mon profil</a>
+  	<button class="btn btn-outline-dark" type="submit">Modifier mon profil</button>
   </form>
   </div>
 </div>
