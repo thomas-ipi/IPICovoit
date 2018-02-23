@@ -15,7 +15,7 @@
 </head>	
 <body>
 <nav class="navbar navbar-dark bg-dark justify-content-between" style="z-index: 50">
-  <span class="navbar-brand" style="color: white; margin-left:20%">IPI'Covoit</span>
+  <span class="navbar-brand" style="color: white; margin-left:20%"><a href="/IPICovoit/">Accueil</a></span>
 	<c:choose>
 		<c:when test = "${nom == null}">
 			<form class="form-inline" style="margin-left:27%" method="post" action="login">
@@ -29,7 +29,7 @@
 		<c:when test = "${nom != null}">
 			
 			<form class="form-inline" style="margin-left:27%" method="post" action="logout">
-				<a class="ico-profile" href="/profile.jsp">
+				<a class="ico-profile" href="/IPICovoit/profile.jsp">
 					<i class="fas fa-user-circle"></i>
 					<span class="navbar-nav" style="width:150px;color:white">Bienvenue à toi ${prenom}</span>
 				</a>
