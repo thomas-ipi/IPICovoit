@@ -9,7 +9,6 @@
 
 <c:import url="/WEB-INF/Shared/header.jsp" />
 <br/>
-<br/><i class="fab fa-accessible-icon"></i>
 <div class="card" style="width: 80%; margin: auto">
   <div class="card-header">
     MON PROFIL

@@ -19,7 +19,7 @@ href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>	
 <body>
 <nav class="navbar navbar-dark bg-dark justify-content-between" style="z-index: 50">
-  <span class="navbar-brand" style="color: white; margin-left:20%"><a href="/IPICovoit/">Accueil</a></span>
+  <span class="navbar-brand" style="color: white; margin-left:20%"><a href="/IPICovoit/"><i class="fas fa-home"></i> Accueil</a></span>
 	<c:choose>
 		<c:when test = "${nom == null}">
 			<form class="form-inline" style="margin-left:27%" method="post" action="login">
