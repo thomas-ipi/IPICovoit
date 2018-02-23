@@ -8,8 +8,8 @@
 		<!-- <div class="" style="text-align: center; z-index: 100;">
 			<img class="" src="images/Logo-IPIcovoit-couleur.png" title="super logo" style="background-color:white; padding: 20px 40px; width: 50%; border-radius: 4px; margin-top: 20px;" />
 		</div> -->
-		<div style="text-align: center; z-index: 100;">
-			<img class="" src="images/Logo-IPIcovoit-blanc.png" style="width: 75%; margin-top: 20px;"/>
+		<div id="img_logo_ipi_covoit">
+			<img class="logo_img" src="images/Logo-IPIcovoit-blanc.png" />
 		</div>
 	
 		

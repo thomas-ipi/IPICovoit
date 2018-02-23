@@ -14,7 +14,7 @@ body
 	width: 20%;
 	background-color: #F22B29;
 	top: 0px;
-    z-index: 100;
+    z-index:1;
    	top: 55px;
     position: absolute;
 }
@@ -97,4 +97,14 @@ body
     align-self: center;
     font-size: 25pt;
     margin-right: 15px;
+}
+
+/* logo ipi covoit audrey */
+#img_logo_ipi_covoit {
+	text-align: center; 
+	z-index: 100;	
+}
+.logo_img {
+	width: 75%; 
+	margin-top: 3em;
 }
