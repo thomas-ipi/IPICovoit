@@ -8,39 +8,36 @@
  </script>
 
 <c:import url="/WEB-INF/Shared/header.jsp" />
-<nav class="navbar navbar-dark bg-dark justify-content-between" style="z-index: 50">
-  <span class="navbar-brand" style="color: white; margin-left:20%">IPI'Covoit</span>
-  <form class="form-inline" style="margin-left:27%" method="post" action="logout">
-		<span class="navbar-nav" style="width:150px;color:white">Bienvenue à toi ${prenom}</span>
-		<button class="btn btn-danger my-2 my-sm-0" type="submit">Deconnexion</button>
-  </form>
-</nav>
 <br/>
 <br/>
 <div class="card" style="width: 80%; margin: auto">
   <div class="card-header">
-    MON PROFILS
+    MON PROFIL
   </div>
   <div class="card-body">
-  <form>
+  <form method="post" action="signIn">
     <div class="form-group">
 	    <label for="nom">Nom :</label>
-	    <input type="text" class="form-control" id="nom" value="recup nom">
+	    <input type="text" class="form-control" id="nom" name="nomProfile" value="${nom}">
     </div>
   	<div class="form-group">
 	    <label for="prenom">Prénom :</label>
-	    <input type="text" class="form-control" id="prenom" value="recup prenom">
+	    <input type="text" class="form-control" id="prenom" name="prenomProfile" value="${prenom}">
   	</div>
   	<fieldset disabled>
   	<div class="form-group">
       <label>E-mail :</label>
-      <input type="text" class="form-control" value="recup mail">
+      <input type="text" class="form-control" value="${mail}">
 	    <small id="emailHelp" class="form-text text-muted">Tu ne peux pas modifier ton adresse mail.</small>
     </div>
   	</fieldset>
   	<div class="form-group">
 	    <label for="adresse">Adresse :</label>
-	    <input type="text" class="form-control" id="adresse" value="recup adresse">
+	    <input type="text" class="form-control" id="adresse" name="adresseProfile" value="${adresse}">
+  	</div>
+  	<div class="form-group">
+	    <label for="adresse">Téléphone :</label>
+	    <input type="text" class="form-control" id="adresse" name="telephoneProfile" value="${telephone}">
   	</div>
   	<br />
   	<a href="#" class="btn btn-outline-dark" style="float: right">Modifier mon profil</a>
@@ -85,9 +82,10 @@
 	  <label class="form-check-label">Non-fumeur</label>
 	</div>
   	<br />
-  	<a href="#" class="btn btn-outline-dark" style="float: right">Modifier mon trajet</a>
+  	<a href="#" class="btn btn-outline-dark" type="submit" style="float: right">Modifier mon trajet</a>
   </form>
   </div>
 </div>
 
 <c:import url="/WEB-INF/Shared/footer.jsp" />
+<c:import url="/WEB-INF/alert/alertBootstrap.jsp" />

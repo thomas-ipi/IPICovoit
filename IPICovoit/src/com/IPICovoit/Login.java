@@ -50,6 +50,7 @@ public class Login extends HttpServlet{
 	        		   session.setAttribute("mail", rs.getString("mail"));
 	        		   session.setAttribute("telephone", rs.getString("telephone"));
 	        		   session.setAttribute("classe", rs.getString("classe"));
+	        		   session.setAttribute("adresse", rs.getString("adresse"));
 	        		   connect = true;
 	        		   session.setAttribute("connected", connect);
 
