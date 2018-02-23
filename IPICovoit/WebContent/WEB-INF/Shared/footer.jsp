@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark" style="z-index:50; width: 80%;position:absolute;height:12%;right:0px;bottom:0px">
+<nav class="navbar navbar-dark bg-dark" style="z-index:50; width: 80%;position:fixed;height:12%;right:0px;bottom:0px">
 		<div class="row justify-content-end">
 		
 		<div style="position:absolute;top:10%;left:5%;">
