@@ -9,6 +9,18 @@ function closeInscription()
 	$('.containerInscription').css('display', 'none');
 }
 
+function verifTrajet()
+{
+	if ($('#value_lat_search_conducteur').val() != '' && $('#value_lng_search_conducteur').val() != '')
+		{
+			return true;
+		} else
+			{
+				alert('Merci de vérifier si le trajet existe !');
+				return false;
+			}
+}
+
 function verifInscription()
 {
 	
