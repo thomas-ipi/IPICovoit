@@ -68,14 +68,18 @@ function initMap() {
       var onChangeHandler = function() {
         calculateAndDisplayRoute(directionsService, directionsDisplay);
       };
-      document.getElementById('direction_campus').addEventListener('click', onChangeHandler);
-      //document.getElementById('end').addEventListener('change', onChangeHandler);
+      document.getElementById('direction_campus2').addEventListener('click', onChangeHandler);      
+      document.getElementById('form_conducteur').addEventListener('submit', onChangeHandler);
       
        var geocoder = new google.maps.Geocoder();
 
+       /*
+       * GET LAT AND LNG AND PUT IN THE HIDDEN INPUT
+       */
       document.getElementById('button_search_conducteur').addEventListener('click', function() {
           geocodeAddress(geocoder, map);
         });
+      document.getElementById('button_search_conducteur').addEventListener('click', onChangeHandler);    
 
 }
 
@@ -84,7 +88,7 @@ function initMap() {
  */
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     directionsService.route({
-      origin: document.getElementById('adresse_passager').value,
+      origin: document.getElementById('adresse_conducteur').value,
       destination: '186 route de grenade, 31700',
       travelMode: 'DRIVING'
     }, function(response, status) {

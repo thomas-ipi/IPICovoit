@@ -99,7 +99,7 @@
 		  </div>
 		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 		  	<div>
-		  			<form id="form_conducteur">
+		  			<form action="#" id="form_conducteur">
 			  			  <div class="form-group">
 						  <i class="fas fa-map-marker"></i>
 							    <label for="exampleInputEmail1">Mon adresse</label>
@@ -148,7 +148,7 @@
 						    <input type="text" class="form-control date_trajet" id="" name="date_trajet">
 					  	  </div>
 					  	  
-						  <button id="direction_campus" type="button" class="btn btn-outline-danger" style="float: right">Go</button>
+						  <button id="direction_campus2" type="submit" class="btn btn-outline-danger" style="float: right">Go</button>
 						  <br/>
 		  			</form>
 				  
