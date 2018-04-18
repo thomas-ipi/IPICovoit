@@ -52,7 +52,7 @@
 					    <label for="exampleInputEmail1">Mon adresse</label>
 					    <input type="text" id="adresse_passager" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse">
 				  </div>
-				  <i class="fas fa-arrows-alt-h"></i>
+				  <i class="fas fa-arrows-alt-h"></i> 
 				  <span>Aller/Retour :</span>
 				  
 				  <br /><div class="form-check form-check-inline">

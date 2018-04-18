@@ -92,7 +92,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         directionsDisplay.setDirections(response);
       } else {
         window.alert('Directions request failed due to ' + status);
-      }
+      } 
     });
  }
  
