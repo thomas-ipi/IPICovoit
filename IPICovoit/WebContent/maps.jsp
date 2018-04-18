@@ -68,8 +68,19 @@ function initMap() {
       var onChangeHandler = function() {
         calculateAndDisplayRoute(directionsService, directionsDisplay);
       };
-      document.getElementById('direction_campus').addEventListener('click', onChangeHandler);
-      //document.getElementById('end').addEventListener('change', onChangeHandler);
+      document.getElementById('direction_campus2').addEventListener('click', onChangeHandler);      
+      document.getElementById('form_conducteur').addEventListener('submit', onChangeHandler);
+      
+       var geocoder = new google.maps.Geocoder();
+
+       /*
+       * GET LAT AND LNG AND PUT IN THE HIDDEN INPUT
+       */
+      document.getElementById('button_search_conducteur').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
+      document.getElementById('button_search_conducteur').addEventListener('click', onChangeHandler);    
+
 }
 
 /* 
@@ -77,7 +88,7 @@ function initMap() {
  */
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     directionsService.route({
-      origin: document.getElementById('adresse_passager').value,
+      origin: document.getElementById('adresse_conducteur').value,
       destination: '186 route de grenade, 31700',
       travelMode: 'DRIVING'
     }, function(response, status) {
@@ -85,9 +96,31 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         directionsDisplay.setDirections(response);
       } else {
         window.alert('Directions request failed due to ' + status);
-      }
+      } 
     });
  }
+ 
+ /*
+ *
+ */
+ function geocodeAddress(geocoder, resultsMap) {
+     var address = document.getElementById('adresse_conducteur').value;
+     geocoder.geocode({'address': address}, function(results, status) {
+       if (status === 'OK') {
+         resultsMap.setCenter(results[0].geometry.location);
+         /*var marker = new google.maps.Marker({
+           map: resultsMap,
+           position: results[0].geometry.location
+         });*/
+         $('#value_lat_search_conducteur').val(results[0].geometry.location.lat());
+         $('#value_lng_search_conducteur').val(results[0].geometry.location.lng());
+       } else {
+         alert('Geocode was not successful for the following reason: ' + status);
+       }
+     });
+   }
+
+ 
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwXO-yQirtjToPKH-aRvXAngfNFwWE1qc&callback=initMap"></script>

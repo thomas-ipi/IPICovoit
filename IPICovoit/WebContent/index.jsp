@@ -52,7 +52,7 @@
 					    <label for="exampleInputEmail1">Mon adresse</label>
 					    <input type="text" id="adresse_passager" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse">
 				  </div>
-				  <i class="fas fa-arrows-alt-h"></i>
+				  <i class="fas fa-arrows-alt-h"></i> 
 				  <span>Aller/Retour :</span>
 				  
 				  <br /><div class="form-check form-check-inline">
@@ -100,11 +100,16 @@
 		  <!-- CONDUCTEUR -->
 		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 		  	<div>
-		  		<form method='POST' action='addTraject'>
+		  		<form method='POST' action='addTraject' id="form_conducteur">
 					  <div class="form-group">
 					  <i class="fas fa-map-marker"></i>
 						    <label for="exampleInputEmail1">Mon adresse</label>
-						    <input type="text" id="adresse_conducteur" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse">
+						    <div class="row">
+							    <input type="text" id="adresse_conducteur" name="adresse_maison_campus" class="form-control col-8 ml-2" placeholder="Renseigne ton adresse">
+							    <button type="button" class="btn col-3 ml-2" id="button_search_conducteur"><i class="fas fa-search"></i> Vérifier</button>
+							    <input type="hidden" value="" id="value_lat_search_conducteur" />
+							    <input type="hidden" value="" id="value_lng_search_conducteur" />
+						    </div>
 					  </div>
 					  <i class="fas fa-arrows-alt-h"></i>
 					  <span>Aller/Retour :</span>
@@ -144,7 +149,7 @@
 					    <input type="text" class="form-control date_trajet" id="" name="date_trajet_end">
 				  	  </div>
 				  	  
-					  <button id="direction_campus" type="submit" class="btn btn-outline-danger" style="float: right">Go</button>
+					  <button id="direction_campus2" type="submit" class="btn btn-outline-danger" style="float: right">Go</button>
 					  <br/>
 				  </form>
 			</div>
