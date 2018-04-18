@@ -25,6 +25,8 @@ public class Conducteur extends HttpServlet{
 	private static String FIELD_SMOKE = "smoke";
 	private static String FIELD_BEGIN_TRAJET = "date_trajet_begin";
 	private static String FIELD_END_TRAJET = "date_trajet_end";
+	private static String FIELD_LAT_TRAJET = "value_lat_search_conducteur";
+	private static String FIELD_LNG_TRAJET = "value_lng_search_conducteur";
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
@@ -32,53 +34,63 @@ public class Conducteur extends HttpServlet{
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-		String adresse = request.getParameter(FIELD_ADRESSE);
-		String retour = request.getParameter(FIELD_ALLER);
-		String smoker = request.getParameter(FIELD_SMOKE);
-		String debut = request.getParameter(FIELD_BEGIN_TRAJET);
-		String fin = request.getParameter(FIELD_END_TRAJET);
-		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-		Date dateFin = null;
-		Date dateDebut = null;
 		HttpSession session = request.getSession();
-		try {
-			dateFin = formatter.parse(fin);
-            dateDebut = formatter.parse(debut);
-
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-		String sql = "INSERT INTO ipicoivoir_bdd.Trajet (`mailUserConducteur`, `date`, `pointDeDepart`, `retour`, `fumeur`) VALUES ";
-		do
+		if(session.getAttribute("mail") == null)
 		{
-			SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");
-			String format = formatter2.format(dateDebut);
-			sql += " ('"+session.getAttribute("mail")+"', '"+format+"', '"+adresse+"', '"+retour+"', '"+smoker+"')";
-			//on ajoute un jour à la date
-			Calendar c = Calendar.getInstance(); 
-			c.setTime(dateDebut); 
-			c.add(Calendar.DATE, 1);
-			dateDebut = c.getTime();
-			if(dateDebut.compareTo(dateFin) <= 0)
-			{
-				sql += ",";
-			}
-		}while(dateDebut.compareTo(dateFin) <= 0);
-		
-		
-		try {
-			Connection con = BDDConnect.connect();
-			Statement stmt;
-			stmt = con.createStatement();
-			stmt.executeUpdate(sql);
-			con.close();
-			request.setAttribute("successMessage", "Vos trajets sont enregistrés.");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			request.setAttribute("errorMessage", "Vos trajets n'ont pas pu être enregistrés. Merci de contacter le support.");
+			request.setAttribute("errorMessage", "Vous devez vous connecter pour poster un trajet");
 		}
-        
+		else
+		{
+			String adresse = request.getParameter(FIELD_ADRESSE);
+			String lat = request.getParameter(FIELD_LAT_TRAJET);
+			String lng = request.getParameter(FIELD_LNG_TRAJET);
+			String retour = request.getParameter(FIELD_ALLER);
+			String smoker = request.getParameter(FIELD_SMOKE);
+			String debut = request.getParameter(FIELD_BEGIN_TRAJET);
+			String fin = request.getParameter(FIELD_END_TRAJET);
+			SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+			Date dateFin = null;
+			Date dateDebut = null;
+			
+			try {
+				dateFin = formatter.parse(fin);
+	            dateDebut = formatter.parse(debut);
+
+	        } catch (ParseException e) {
+	            e.printStackTrace();
+	        }
+			String sql = "INSERT INTO ipicoivoir_bdd.Trajet (`mailUserConducteur`, `date`, `pointDeDepart`, `retour`, `fumeur`, `pointDeDepartLat`, `pointDeDepartLng`) VALUES ";
+			do
+			{
+				SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");
+				String format = formatter2.format(dateDebut);
+				sql += " ('"+session.getAttribute("mail")+"', '"+format+"', '"+adresse+"', '"+retour+"', '"+smoker+"', '"+lat+"', '"+lng+"')";
+				//on ajoute un jour à la date
+				Calendar c = Calendar.getInstance(); 
+				c.setTime(dateDebut); 
+				c.add(Calendar.DATE, 1);
+				dateDebut = c.getTime();
+				if(dateDebut.compareTo(dateFin) <= 0)
+				{
+					sql += ",";
+				}
+			}while(dateDebut.compareTo(dateFin) <= 0);
+			
+			
+			try {
+				Connection con = BDDConnect.connect();
+				Statement stmt;
+				stmt = con.createStatement();
+				stmt.executeUpdate(sql);
+				con.close();
+				request.setAttribute("successMessage", "Vos trajets sont enregistrés.");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				request.setAttribute("errorMessage", "Vos trajets n'ont pas pu être enregistrés. Merci de contacter le support.");
+			}
+		}
+		
 		this.getServletContext().getRequestDispatcher(VIEW_PAGES_URL).include( request, response );
 	}
 }
