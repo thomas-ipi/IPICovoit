@@ -70,6 +70,13 @@ function initMap() {
       };
       document.getElementById('direction_campus').addEventListener('click', onChangeHandler);
       //document.getElementById('end').addEventListener('change', onChangeHandler);
+      
+       var geocoder = new google.maps.Geocoder();
+
+      document.getElementById('button_search_conducteur').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
+
 }
 
 /* 
@@ -88,6 +95,28 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       }
     });
  }
+ 
+ /*
+ *
+ */
+ function geocodeAddress(geocoder, resultsMap) {
+     var address = document.getElementById('adresse_conducteur').value;
+     geocoder.geocode({'address': address}, function(results, status) {
+       if (status === 'OK') {
+         resultsMap.setCenter(results[0].geometry.location);
+         /*var marker = new google.maps.Marker({
+           map: resultsMap,
+           position: results[0].geometry.location
+         });*/
+         $('#value_lat_search_conducteur').val(results[0].geometry.location.lat());
+         $('#value_lng_search_conducteur').val(results[0].geometry.location.lng());
+       } else {
+         alert('Geocode was not successful for the following reason: ' + status);
+       }
+     });
+   }
+
+ 
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwXO-yQirtjToPKH-aRvXAngfNFwWE1qc&callback=initMap"></script>

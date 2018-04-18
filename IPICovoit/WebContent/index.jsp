@@ -99,51 +99,59 @@
 		  </div>
 		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 		  	<div>
-				  <div class="form-group">
-				  <i class="fas fa-map-marker"></i>
-					    <label for="exampleInputEmail1">Mon adresse</label>
-					    <input type="text" id="adresse_conducteur" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse">
-				  </div>
-				  <i class="fas fa-arrows-alt-h"></i>
-				  <span>Aller/Retour :</span>
+		  			<form id="form_conducteur">
+			  			  <div class="form-group">
+						  <i class="fas fa-map-marker"></i>
+							    <label for="exampleInputEmail1">Mon adresse</label>
+							    <div class="row">
+								    <input type="text" id="adresse_conducteur" name="adresse_maison_campus" class="form-control col-8 ml-2" placeholder="Renseigne ton adresse">
+								    <button type="button" class="btn col-3 ml-2" id="button_search_conducteur"><i class="fas fa-search"></i> Vérifier</button>
+								    <input type="hidden" value="" id="value_lat_search_conducteur" />
+								    <input type="hidden" value="" id="value_lng_search_conducteur" />
+							    </div>
+						  </div>
+						  <i class="fas fa-arrows-alt-h"></i>
+						  <span>Aller/Retour :</span>
+						  
+						  <br /><div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="option1">
+							  <label class="form-check-label" for="inlineRadio1">Aller</label>
+						  </div>
+						  <div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="option2">
+							  <label class="form-check-label" for="inlineRadio2">Retour</label>
+						  </div>
+						  <div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="option2">
+							  <label class="form-check-label" for="inlineRadio2">Aller & Retour</label>
+						  </div>
+						  <br />
+						  <br />
+						  <img src="images/cigarette.png" /> 
+						  <span>Fumeur/Non-fumeur :</span>
+						  <br/>
+						  <div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" name="f" id="inlineRadio1" value="option1">
+							  <label class="form-check-label" for="inlineRadio1">Fumeur</label>
+						  </div>
+						  <div class="form-check form-check-inline">
+							  <input class="form-check-input" type="radio" name="f" id="inlineRadio2" value="option2">
+							  <label class="form-check-label" for="inlineRadio2">Non-fumeur</label>
+						  </div>
+						  <br/>
+						  <br/>
+						  <div class="form-group">
+						  <i class="fas fa-calendar-alt"></i>
+						    <span>Du </span>
+						    <input type="text" class="form-control date_trajet" id="" name="date_trajet">
+						    <span> au </span>
+						    <input type="text" class="form-control date_trajet" id="" name="date_trajet">
+					  	  </div>
+					  	  
+						  <button id="direction_campus" type="button" class="btn btn-outline-danger" style="float: right">Go</button>
+						  <br/>
+		  			</form>
 				  
-				  <br /><div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="option1">
-					  <label class="form-check-label" for="inlineRadio1">Aller</label>
-				  </div>
-				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="option2">
-					  <label class="form-check-label" for="inlineRadio2">Retour</label>
-				  </div>
-				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="option2">
-					  <label class="form-check-label" for="inlineRadio2">Aller & Retour</label>
-				  </div>
-				  <br />
-				  <br />
-				  <img src="images/cigarette.png" /> 
-				  <span>Fumeur/Non-fumeur :</span>
-				  <br/>
-				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="f" id="inlineRadio1" value="option1">
-					  <label class="form-check-label" for="inlineRadio1">Fumeur</label>
-				  </div>
-				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="f" id="inlineRadio2" value="option2">
-					  <label class="form-check-label" for="inlineRadio2">Non-fumeur</label>
-				  </div>
-				  <br/>
-				  <br/>
-				  <div class="form-group">
-				  <i class="fas fa-calendar-alt"></i>
-				    <span>Du </span>
-				    <input type="text" class="form-control date_trajet" id="" name="date_trajet">
-				    <span> au </span>
-				    <input type="text" class="form-control date_trajet" id="" name="date_trajet">
-			  	  </div>
-			  	  
-				  <button id="direction_campus" type="button" class="btn btn-outline-danger" style="float: right">Go</button>
-				  <br/>
 			</div>
 		  </div>
 		</div>
