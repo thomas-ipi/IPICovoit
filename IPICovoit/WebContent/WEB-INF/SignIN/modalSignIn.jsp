@@ -8,18 +8,18 @@
 			<hr/><br>
 			<div class="row">
 			    <div class="col">
-			      <input type="text" class="form-control" id="nomInscription" name="prenom" placeholder="Prénom">
+			      <input type="text" class="form-control" id="nomInscription" name="prenomSign" placeholder="Prénom">
 			    </div>
 			    <div class="col">
-			      <input type="text" class="form-control" id="prenomInscription" name="nom" placeholder="Nom">
+			      <input type="text" class="form-control" id="prenomInscription" name="nomSign" placeholder="Nom">
 				</div>
 			</div>
 			<small id="nameHelp" class="form-text" style="font-size:0.7vw;color:white;display:none">*2 caractères minimum</small><br>
-			<input type="tel" class="form-control"  id="telInscription" placeholder="Téléphone*" name="phone"/>
+			<input type="tel" class="form-control"  id="telInscription" placeholder="Téléphone*" name="phoneSign"/>
 			<small id="telHelp" class="form-text" style="font-size:0.7vw;color:white;display:none">*Chiffres seulement et 10 caractères</small><br>
-			<input type="email" class="form-control"  id="mailInscription" placeholder="Mail*" name="mail"/>
+			<input type="email" class="form-control"  id="mailInscription" placeholder="Mail*" name="mailSign"/>
 			<small id="mailHelp" class="form-text" style="font-size:0.7vw;color:white;display:none">*L'extension mail doit être '@campus-igs-toulouse.fr'</small><br>
-			<input type="password" class="form-control"  id="mdp1Inscription" placeholder="Mot de Passe*" name="mdp"/><br>
+			<input type="password" class="form-control"  id="mdp1Inscription" placeholder="Mot de Passe*" name="mdpSign"/><br>
 			<input type="password" class="form-control"  id="mdp2Inscription" placeholder="Confirmer le mot de passe"/>
 			<small id="mdpHelp1" class="form-text" style="font-size:0.7vw;color:white;display:none">*5 caractères minimum</small>
 			<small id="mdpHelp2" class="form-text" style="font-size:0.7vw;color:white;display:none">*Les mots de passe doivent être identiques</small><br>
