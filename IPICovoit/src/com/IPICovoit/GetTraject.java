@@ -1,6 +1,7 @@
 package com.IPICovoit;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,6 +12,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
 
 /**
  * Servlet implementation class GetTrajet
@@ -34,15 +41,32 @@ public class GetTraject extends HttpServlet {
 		String type = request.getParameter("type");
 		String fumeur = request.getParameter("fumeur");
 		String date = request.getParameter("date");
-		String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet"
-				+ "WHERE retour = "+type
-				+ "AND fumeur = "+fumeur
-				+ "AND date = "+date;
+		/*String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet"
+				+ " WHERE retour = '"+type
+				+ "' AND fumeur = '"+fumeur
+				+ "' AND date = '"+date+"'";*/
+		String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet";
 		try {
 			Connection con = BDDConnect.connect();
 			Statement stmt = con.createStatement();
 	        ResultSet rs = stmt.executeQuery(sql);
-	        request.setAttribute("result", rs);
+	        response.setContentType("text/JSON");
+	        JsonObject jsonResponse = new JsonObject();	
+	        JsonArray data = new JsonArray();
+	        while(rs.next() ) {
+		        JsonArray row = new JsonArray();
+		        row.add(new JsonPrimitive(rs.getString("pointDeDepart")));	
+		        row.add(new JsonPrimitive(rs.getString("pointDeDepartLat")));
+		        row.add(new JsonPrimitive(rs.getString("pointDeDepartLng")));
+		        row.add(new JsonPrimitive(rs.getString("date")));
+		        data.add(row);
+	        }
+	        jsonResponse.add("trajets", data);
+	      
+	        PrintWriter out = response.getWriter();
+
+	        out.print(jsonResponse);
+	        out.close();
         } catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
