@@ -3,7 +3,7 @@
 		<form method="post" class="form-group" onsubmit="return verifInscription()" action="signIn">
 			<center>
 				<h2>Inscription
-				<input type="button" value="X" style="max-width:40px;margin-left:10%;margin-top:-10px" class="btn btn-danger" onclick="closeInscription()"/></h2>
+				<input type="button" value="X" style="float:right" class="btn btn-danger" onclick="closeInscription()"/></h2>
 			</center>
 			<hr/><br>
 			<div class="row">

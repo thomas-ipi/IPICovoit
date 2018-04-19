@@ -9,6 +9,19 @@ function closeInscription()
 	$('.containerInscription').css('display', 'none');
 }
 
+function verifTrajet()
+{
+	if ($('#value_lat_search_conducteur').val() != '' && $('#value_lng_search_conducteur').val() != '')
+		{
+			return true;
+		} else
+			{
+				$('#button_search_conducteur').css('border','2px solid red');
+				$('#verifConducteurMessage').css('display','block');
+				return false;
+			}
+}
+
 function verifInscription()
 {
 	

@@ -67,9 +67,11 @@ function initMap() {
       
       var onChangeHandler = function() {
         calculateAndDisplayRoute(directionsService, directionsDisplay);
+        $('#value_lat_search_conducteur').val('');
+        $('#value_lng_search_conducteur').val('');
       };
-      document.getElementById('direction_campus2').addEventListener('click', onChangeHandler);      
-      document.getElementById('form_conducteur').addEventListener('submit', onChangeHandler);
+      /*document.getElementById('direction_campus2').addEventListener('click', onChangeHandler);*/      
+      /*document.getElementById('form_conducteur').addEventListener('submit', onChangeHandler);*/
       
        var geocoder = new google.maps.Geocoder();
 
@@ -79,7 +81,7 @@ function initMap() {
       document.getElementById('button_search_conducteur').addEventListener('click', function() {
           geocodeAddress(geocoder, map);
         });
-      document.getElementById('button_search_conducteur').addEventListener('click', onChangeHandler);    
+      document.getElementById('button_search_conducteur').addEventListener('click', onChangeHandler);
 
 }
 
@@ -112,10 +114,12 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
            map: resultsMap,
            position: results[0].geometry.location
          });*/
+		$('#button_search_conducteur').css('border','0px solid red');
+		$('#verifConducteurMessage').css('display','none');
          $('#value_lat_search_conducteur').val(results[0].geometry.location.lat());
          $('#value_lng_search_conducteur').val(results[0].geometry.location.lng());
        } else {
-         alert('Geocode was not successful for the following reason: ' + status);
+         alert('Erreur: ' + status);
        }
      });
    }
