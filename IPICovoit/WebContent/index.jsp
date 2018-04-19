@@ -110,6 +110,7 @@
 							    <input type="hidden" name="value_lat_search_conducteur" value="" id="value_lat_search_conducteur" />
 							    <input type="hidden" name="value_lng_search_conducteur" value="" id="value_lng_search_conducteur" />
 						    </div>
+						    <div id="verifConducteurMessage" style="color:red;display:none">Merci de vérifier l'adresse !</div>
 					  </div>
 					  <i class="fas fa-arrows-alt-h"></i>
 					  <span>Aller/Retour :</span>

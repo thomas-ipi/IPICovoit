@@ -16,7 +16,8 @@ function verifTrajet()
 			return true;
 		} else
 			{
-				alert('Merci de vérifier si le trajet existe !');
+				$('#button_search_conducteur').css('border','2px solid red');
+				$('#verifConducteurMessage').css('display','block');
 				return false;
 			}
 }
