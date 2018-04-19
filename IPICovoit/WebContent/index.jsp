@@ -46,56 +46,68 @@
 		
 		<div class="tab-content" id="myTabContent" style="background-color: white; padding: 30px 20px;"> 
 		  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-		  	<div>
-				  <div class="form-group">
-				  <i class="fas fa-map-marker"></i>
-					    <label for="exampleInputEmail1">Mon adresse</label>
-					    <input type="text" id="adresse_passager" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse" required>
-				  </div>
-				  <i class="fas fa-arrows-alt-h"></i> 
-				  <span>Aller/Retour :</span>
-				  
-				  <br /><div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="option1" checked>
-					  <label class="form-check-label" for="inlineRadio1">Aller</label>
-				  </div>
-				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="option2">
-					  <label class="form-check-label" for="inlineRadio2">Retour</label>
-				  </div>
-				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name=ar id="inlineRadio2" value="option2">
-					  <label class="form-check-label" for="inlineRadio2">Aller & Retour</label>
-				  </div>
-				  <br />
-				  <br /> 
-				  <img src="images/cigarette.png" /> 
-				  <span>Fumeur/Non-fumeur :</span>
-				  <br/>
-				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="f" id="inlineRadio1" value="option1">
-					  <label class="form-check-label" for="inlineRadio1">Fumeur</label>
-				  </div>
-				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="f" id="inlineRadio2" value="option2" checked>
-					  <label class="form-check-label" for="inlineRadio2">Non-fumeur</label>
-				  </div>
-				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="f" id="inlineRadio2" value="option2">
-					  <label class="form-check-label" for="inlineRadio2">Peu importe</label>
-				  </div>
-				  <br/>
-				  <br/>
-				  <div class="form-group">
-				  <i class="fas fa-calendar-alt"></i>
-				    <label for="prenom">Date :</label>
-				    <input type="text" class="form-control date_trajet" id="" name="date_trajet" required>
-			  	  </div>
-				  
+		  	<form method='POST' action='getTraject' id="form_passager" onsubmit="">
+                <!-- PASSAGER -->
+                <div class="tab-pane fade show active" id="passager" role="tabpanel" aria-labelledby="passager-tab">
+                    <div>
+                        <!-- ADRESSE -->
+                        <div class="form-group">
+                            <i class="fas fa-map-marker"></i>
+                            <label for="adresse_maison_campus">Mon adresse</label>
+                            <input type="text" id="adresse_passager" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse" required>
+                        </div>
 
-				  <button id="direction_campus" type="button" class="btn btn-outline-danger" style="float: right">Go</button>
-				  <br/>
-			</div>
+                        <!-- ALLER RETOUR -->
+                        <i class="fas fa-arrows-alt-h"></i>
+                        <span>Aller/Retour :</span>
+                        <br />
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="option1" checked>
+                            <label class="form-check-label" for="inlineRadio1">Aller</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Retour</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name=ar id="inlineRadio3" value="option2">
+                            <label class="form-check-label" for="inlineRadio3">Aller & Retour</label>
+                        </div>
+                        <br />
+                        <br />
+
+                        <!-- FUMEUR -->
+                        <img src="assets/cigarette.png" /> 
+                        <span>Fumeur/Non-fumeur :</span>
+                        <br/>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="f" id="inlineRadio4" value="option1">
+                            <label class="form-check-label" for="inlineRadio4">Fumeur</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="f" id="inlineRadio5" value="option2" checked>
+                            <label class="form-check-label" for="inlineRadio5">Non-fumeur</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="f" id="inlineRadio6" value="option2">
+                            <label class="form-check-label" for="inlineRadio6">Peu importe</label>
+                        </div>
+                        <br/>
+                        <br/>
+
+                        <!-- DATE -->
+                        <div class="form-group">
+                            <i class="fas fa-calendar-alt"></i>
+                            <label for="prenom">Date :</label>
+                            <input type="text" class="form-control date_trajet" id="" name="date_trajet" required>
+                        </div>
+                            
+                        <!-- SUBMIT FORM -->
+                        <button id="submit_passager" type="button" class="btn btn-outline-danger" style="float: right">Go</button><!-- direction camus en id avant -->
+                        <br/>
+                    </div>
+                </div>
+            </form>
 		  </div>
 		  <!-- CONDUCTEUR -->
 		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
