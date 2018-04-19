@@ -20,6 +20,7 @@ body
 }
 .nav2
 {
+	object-fit: cover;
 	height: 100%;
 	width: 80%;
 	top: 0px;
@@ -52,10 +53,18 @@ body
 
 
 /* Bloc maps - Audrey */
+.maps {
+	height: 100%;
+	width:100%;
+}
 
 #map_canvas {
-    height: 760px;
-    width: 100%;
+	position: absolute;
+	overflow: hidden; 
+	top: 0;
+	bottom: 0;
+    height: 88%;
+    width: 80%;
 }
 
 #map_indic {
