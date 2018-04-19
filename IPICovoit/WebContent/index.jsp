@@ -101,7 +101,7 @@
                             <label for="prenom">Date :</label>
                             <input type="text" class="form-control date_trajet" id="" name="date_trajet" required>
                         </div>
-                            
+
                         <!-- SUBMIT FORM -->
                         <button id="submit_passager" type="button" class="btn btn-outline-danger" style="float: right">Go</button><!-- direction camus en id avant -->
                         <br/>

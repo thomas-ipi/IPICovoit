@@ -27,7 +27,6 @@ public class GetTraject extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		 request.setAttribute("successMessage", "Vous venez de vous connecter.");
 	}
 
 }
