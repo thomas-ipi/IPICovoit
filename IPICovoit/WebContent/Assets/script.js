@@ -9,6 +9,38 @@ function closeInscription()
 	$('.containerInscription').css('display', 'none');
 }
 
+
+function getTrajects()
+{
+	type = $('input[name=ar]:checked').val();
+	fumeur = $('input[name=f]:checked').val();
+	date = $('#datePickerPassager').val();
+	
+	/*alert (adresse+' '+type+' '+fumeur+' '+date);*/
+	
+	 $.ajax({
+	       url : 'GetTraject',
+	       type : 'POST',
+	       data : 'arg0='+type+'&arg1='+fumeur+'&arg2='+date,
+	       success: function (data) {
+	            console.log(data);
+	        }
+	    });
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
 function verifTrajet()
 {
 	if ($('#value_lat_search_conducteur').val() != '' && $('#value_lng_search_conducteur').val() != '')

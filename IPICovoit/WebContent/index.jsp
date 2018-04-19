@@ -62,35 +62,35 @@
                         <span>Aller/Retour :</span>
                         <br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="option1" checked>
+                            <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="Aller" checked>
                             <label class="form-check-label" for="inlineRadio1">Aller</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="option2">
+                            <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="Retour">
                             <label class="form-check-label" for="inlineRadio2">Retour</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name=ar id="inlineRadio3" value="option2">
+                            <input class="form-check-input" type="radio" name=ar id="inlineRadio3" value="Aller_Retour">
                             <label class="form-check-label" for="inlineRadio3">Aller & Retour</label>
                         </div>
                         <br />
                         <br />
 
                         <!-- FUMEUR -->
-                        <img src="assets/cigarette.png" /> 
+                        <img src="images/cigarette.png" /> 
                         <span>Fumeur/Non-fumeur :</span>
                         <br/>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="f" id="inlineRadio4" value="option1">
-                            <label class="form-check-label" for="inlineRadio4">Fumeur</label>
+                            <input class="form-check-input" type="radio" name="f" id="inlineRadio4" value="Fumeur">
+                            <label class="form-check-label" for="inlineRadio4" value="Fumeur">Fumeur</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="f" id="inlineRadio5" value="option2" checked>
-                            <label class="form-check-label" for="inlineRadio5">Non-fumeur</label>
+                            <input class="form-check-input" type="radio" name="f" id="inlineRadio5" value="Non_Fumeur" checked>
+                            <label class="form-check-label" for="inlineRadio5" value="Non_fumeur">Non-fumeur</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="f" id="inlineRadio6" value="option2">
-                            <label class="form-check-label" for="inlineRadio6">Peu importe</label>
+                            <input class="form-check-input" type="radio" name="f" id="inlineRadio6" value="Peu_importe">
+                            <label class="form-check-label" for="inlineRadio6" value="Peu_importe">Peu importe</label>
                         </div>
                         <br/>
                         <br/>
@@ -99,11 +99,11 @@
                         <div class="form-group">
                             <i class="fas fa-calendar-alt"></i>
                             <label for="prenom">Date :</label>
-                            <input type="text" class="form-control date_trajet" id="" name="date_trajet" required>
+                            <input type="text" class="form-control date_trajet" id="datePickerPassager" name="date_trajet" required>
                         </div>
 
                         <!-- SUBMIT FORM -->
-                        <button id="submit_passager" type="button" class="btn btn-outline-danger" style="float: right">Go</button><!-- direction camus en id avant -->
+                        <button id="submit_passager" type="button" class="btn btn-outline-danger" onclick="getTrajects()" style="float: right">Go</button><!-- direction camus en id avant -->
                         <br/>
                     </div>
                 </div>
