@@ -1,32 +1,36 @@
 package com.IPICovoit;
 
 import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
 
-/**
- * Servlet implementation class GetTrajet
- */
-@WebServlet("/GetTraject")
-public class GetTraject extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public GetTraject() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+import javax.jws.WebMethod;
+import javax.jws.WebService;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+@WebService
+public class GetTraject {
 
+	@WebMethod(action="getTrajectsSearch")
+	public ResultSet getTrajectsSearch(String type, String fumeur, String date) throws IOException {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		date = formatter.format(date);
+		String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet"
+				+ "WHERE retour = "+type
+				+ "AND fumeur = "+fumeur
+				+ "AND date = "+date;
+		try {
+			Connection con = BDDConnect.connect();
+			Statement stmt = con.createStatement();
+	        ResultSet rs = stmt.executeQuery(sql);
+	        return rs;
+        } catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }
