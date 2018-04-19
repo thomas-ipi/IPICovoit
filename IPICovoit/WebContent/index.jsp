@@ -50,13 +50,13 @@
 				  <div class="form-group">
 				  <i class="fas fa-map-marker"></i>
 					    <label for="exampleInputEmail1">Mon adresse</label>
-					    <input type="text" id="adresse_passager" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse">
+					    <input type="text" id="adresse_passager" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse" required>
 				  </div>
 				  <i class="fas fa-arrows-alt-h"></i> 
 				  <span>Aller/Retour :</span>
 				  
 				  <br /><div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="option1">
+					  <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="option1" checked>
 					  <label class="form-check-label" for="inlineRadio1">Aller</label>
 				  </div>
 				  <div class="form-check form-check-inline">
@@ -77,7 +77,7 @@
 					  <label class="form-check-label" for="inlineRadio1">Fumeur</label>
 				  </div>
 				  <div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="f" id="inlineRadio2" value="option2">
+					  <input class="form-check-input" type="radio" name="f" id="inlineRadio2" value="option2" checked>
 					  <label class="form-check-label" for="inlineRadio2">Non-fumeur</label>
 				  </div>
 				  <div class="form-check form-check-inline">
@@ -89,7 +89,7 @@
 				  <div class="form-group">
 				  <i class="fas fa-calendar-alt"></i>
 				    <label for="prenom">Date :</label>
-				    <input type="text" class="form-control date_trajet" id="" name="date_trajet">
+				    <input type="text" class="form-control date_trajet" id="" name="date_trajet" required>
 			  	  </div>
 				  
 
