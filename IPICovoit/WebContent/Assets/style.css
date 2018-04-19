@@ -60,7 +60,7 @@ body
 
 #map_canvas {
 	position: absolute;
-	overflow: hidden;
+	overflow: hidden; 
 	top: 0;
 	bottom: 0;
     height: 88%;
