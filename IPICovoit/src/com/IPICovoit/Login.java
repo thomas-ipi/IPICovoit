@@ -18,17 +18,10 @@ public class Login extends HttpServlet{
 	private static String FIELD_ID = "id";
 	private static String FIELD_MDP = "mdp";
 	private static String VIEW_PAGES_URL = "/";
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-		
-        String mail = request.getParameter(FIELD_ID);
-        String mdp = request.getParameter(FIELD_MDP);
-        String sql = "SELECT * FROM  ipicoivoir_bdd.User";
+	
+	public static void connect(String mail, String mdp, HttpServletRequest request)
+	{
+		String sql = "SELECT * FROM  ipicoivoir_bdd.User";
 		HttpSession session = request.getSession();
 		try {
 			Connection con = BDDConnect.connect();
@@ -70,6 +63,19 @@ public class Login extends HttpServlet{
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Impossible de se connecter, veuiller réessayer ultérieurement.");
 		}
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+		
+        String mail = request.getParameter(FIELD_ID);
+        String mdp = request.getParameter(FIELD_MDP);
+        connect(mail, mdp, request);
 		this.getServletContext().getRequestDispatcher(VIEW_PAGES_URL).include( request, response );
 	}
 }

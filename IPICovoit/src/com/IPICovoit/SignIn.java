@@ -44,13 +44,14 @@ public class SignIn extends HttpServlet{
 			stmt = con.createStatement();
 			stmt.executeUpdate(sql);
 			con.close();
-			request.setAttribute("successMessage", "Vous venez d'être inscrit. Vous pouvez dès à présent vous connecter.");
+			Login.connect(mail, mdp, request);
+			request.setAttribute("successMessage", "Vous venez d'être inscrit. ");
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "L'inscription a échouée, merci de réessayer ultérieurement.");
 		}
-        
 		this.getServletContext().getRequestDispatcher(VIEW_PAGES_URL).include( request, response );
 	}
 }
