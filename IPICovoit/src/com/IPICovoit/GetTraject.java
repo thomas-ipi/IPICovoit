@@ -57,13 +57,15 @@ public class GetTraject extends HttpServlet {
 		String sql = "SELECT pointDeDepart, pointDeDepartLat, pointDeDepartLng, date,"
 				+ "nom, prenom, fumeur, retour, nbplaces, mail "
 				+ "FROM  ipicoivoir_bdd.Trajet t , ipicoivoir_bdd.User u"
-				+ " WHERE (retour = '"+type+"'"
-				+ " OR retour = 'twice')"
-				+ " AND date = '"+date+"'"
+				+ " WHERE date = '"+date+"'"
 				+ " AND t.mailUserConducteur = u.mail";
-		if(fumeur != "twice")
+ 		if(fumeur.compareTo("twice") != 0)
 		{
 			sql += " AND fumeur = '"+fumeur+"'";
+		}
+		if(type.compareTo("twice") != 0)
+		{
+			sql += "retour = '"+type+"' OR retour = 'twice'";
 		}
 		//String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet";
 		try {

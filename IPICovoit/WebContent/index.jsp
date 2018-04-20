@@ -49,7 +49,7 @@
                             <label class="form-check-label" for="inlineRadio2">Retour</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name=ar id="inlineRadio3" value="Aller_Retour">
+                            <input class="form-check-input" type="radio" name=ar id="inlineRadio3" value="twice">
                             <label class="form-check-label" for="inlineRadio3">Aller & Retour</label>
                         </div>
                         <br />
