@@ -1,3 +1,5 @@
+var address;
+
 function inscription()
 {
 	//$('body').append('<div class="container containerInscription"><div class="blocInscription"><form method="post" class="form-group" action=""><center><h2>Inscription<input value="X" style="max-width:40px;margin-left:10%;margin-top:-10px" class="btn btn-danger" onclick="closeInscription()"/></h2></center><hr/><br><div class="row" style="margin-left:0px;margin-right:0px"><input type="text" class="form-control col-md-6" id="nomInscription" placeholder="Nom"/><input type="text" class="form-control col-md-6" id="prenomInscription" placeholder="Prénom"/></div><br><input type="tel" class="form-control"  id="telInscription" placeholder="Téléphone"/><br><input type="email" class="form-control"  id="mailInscription" placeholder="Mail"/><br><input type="password" class="form-control"  id="mdp1Inscription" placeholder="Mot de Passe"/><br><input type="password" class="form-control"  id="mdp2Inscription" placeholder="Confirmer le mot de passe"/><br><center><input onclick="verifInscription()" type="btn" class="btn btn-danger" value="Valider"/></center></form></div></div>');
@@ -12,33 +14,68 @@ function closeInscription()
 
 function getTrajects()
 {
-	type = $('input[name=ar]:checked').val();
-	fumeur = $('input[name=f]:checked').val();
-	date = $('#datePickerPassager').val();
-	
-	/*alert (adresse+' '+type+' '+fumeur+' '+date);*/
-	
-	 $.ajax({
-	       url : 'GetTraject',
-	       type : 'POST',
-	       data : 'arg0='+type+'&arg1='+fumeur+'&arg2='+date,
-	       success: function (data) {
-	            console.log(data);
-	        }
-	    });
-	
-	
+    type = $('input[name=ar]:checked').val();
+    fumeur = $('input[name=f]:checked').val();
+    date = $('#datePickerPassager').val();
+    
+    $.ajax({
+        url : 'GetTraject',
+        type : 'POST',
+        data : 'arg0='+type+'&arg1='+fumeur+'&arg2='+date,
+        success: function (data) {
+           myJson = JSON.parse(data);
+           /* Réccupère le premier champs de la première ligne */
+           
+           console.log(myJson);
+           
+           myJson['trajets'].forEach(function(element) {	
+               var myLatlng = {lat: parseFloat(element[1]), lng:parseFloat(element[2])};
+               var marker = new google.maps.Marker({
+             	    position: myLatlng,
+             	    title:element[0]
+             	});
+               
+               var contentString = '<div id="content">'+
+               '<div id="siteNotice">'+
+               '</div>'+
+               '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+               '<div id="bodyContent">'+
+               '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+               'sandstone rock formation in the southern part of the '+
+               'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+               'south west of the nearest large town, Alice Springs; 450&#160;km '+
+               '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+               'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+               'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+               'Aboriginal people of the area. It has many springs, waterholes, '+
+               'rock caves and ancient paintings. Uluru is listed as a World '+
+               'Heritage Site.</p>'+
+               '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+               'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+               '(last visited June 22, 2009).</p>'+
+               '</div>'+
+               '</div>';
+
+           var infowindow = new google.maps.InfoWindow({
+             content: contentString
+           });
+
+           marker.setMap(map);
+
+
+
+
+
+
+           marker.addListener('click', function() {
+             infowindow.open(map, marker);
+           });
+           });
+        }
+     });
+    
+    
 }
-
-
-
-
-
-
-
-
-
-
 
 
 function verifTrajet()

@@ -1,5 +1,6 @@
 <script>
 
+var map;
 
 /*
  * INITIALISER MAPS
@@ -51,7 +52,7 @@ function initMap() {
 	 
 	var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
-    var map = new google.maps.Map(document.getElementById('my_google_maps'), {
+    map = new google.maps.Map(document.getElementById('my_google_maps'), {
         zoom: 12,
         center: new google.maps.LatLng(43.643987, 1.386879),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -59,6 +60,7 @@ function initMap() {
         mapTypeId: 'monTheme'
       });
       directionsDisplay.setMap(map);
+      
 
       var styledMapType = new google.maps.StyledMapType(styles['monTheme'], {name: 'monTheme'});
       map.mapTypes.set('monTheme', styledMapType);
@@ -80,7 +82,7 @@ function initMap() {
           geocodeAddress(geocoder, map);
         });
       document.getElementById('button_search_conducteur').addEventListener('click', onChangeHandler);
-
+      
 }
 
 /* 
@@ -103,15 +105,15 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
  /*
  *
  */
- function geocodeAddress(geocoder, resultsMap) {
+ function geocodeAddress(geocoder, resultsMap, address) {
      var address = document.getElementById('adresse_conducteur').value;
      geocoder.geocode({'address': address}, function(results, status) {
        if (status === 'OK') {
          resultsMap.setCenter(results[0].geometry.location);
-         /*var marker = new google.maps.Marker({
+         var marker = new google.maps.Marker({
            map: resultsMap,
            position: results[0].geometry.location
-         });*/
+         });
 		$('#button_search_conducteur').css('border','0px solid red');
 		$('#verifConducteurMessage').css('display','none');
          $('#value_lat_search_conducteur').val(results[0].geometry.location.lat());
