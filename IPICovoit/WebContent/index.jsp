@@ -68,8 +68,8 @@
                             <label class="form-check-label" for="inlineRadio5" value="nonFumeur">Non-fumeur</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="f" id="inlineRadio6" value="Peu_importe">
-                            <label class="form-check-label" for="inlineRadio6" value="Peu_importe">Peu importe</label>
+                            <input class="form-check-input" type="radio" name="f" id="inlineRadio6" value="twice">
+                            <label class="form-check-label" for="inlineRadio6" value="twice">Peu importe</label>
                         </div>
                         <br/>
                         <br/>
