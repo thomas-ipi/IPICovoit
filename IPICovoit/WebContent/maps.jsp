@@ -1,6 +1,8 @@
 <script>
 
 var map;
+var directionsService;
+var directionsDisplay;
 
 
 /*
@@ -51,8 +53,8 @@ function initMap() {
 	        }
 	    ]};
 	 
-	var directionsService = new google.maps.DirectionsService;
-    var directionsDisplay = new google.maps.DirectionsRenderer;
+	directionsService = new google.maps.DirectionsService;
+    directionsDisplay = new google.maps.DirectionsRenderer;
     map = new google.maps.Map(document.getElementById('my_google_maps'), {
         zoom: 12,
         center: new google.maps.LatLng(43.643987, 1.386879),
@@ -62,20 +64,35 @@ function initMap() {
       });
       directionsDisplay.setMap(map);
       
+      var myLatlngCampus = {lat: 43.643987, lng:1.386879};
+      marker = new google.maps.Marker({
+    	    position: myLatlngCampus,
+    	    title:'Campus Igs Toulouse'
+    	});
+      
+      marker.setMap(map);
+      
+      var infosCampusBulle = '<div>Campus IGS Toulouse</div>';
+      
+      var infosCampus = new google.maps.InfoWindow({
+          content: infosCampusBulle
+        });
+      
+      marker.addListener('click', function() {
+    	  infosCampus.open(map, this);
+        });
 
       var styledMapType = new google.maps.StyledMapType(styles['monTheme'], {name: 'monTheme'});
       map.mapTypes.set('monTheme', styledMapType);
       
       var onChangeHandler = function() {
-        calculateAndDisplayRoute(directionsService, directionsDisplay);
+        calculateAndDisplayRoute(directionsService, directionsDisplay, '');
         $('#value_lat_search_conducteur').val('');
         $('#value_lng_search_conducteur').val('');
       };
-      /*document.getElementById('direction_campus2').addEventListener('click', onChangeHandler);*/      
-      /*document.getElementById('form_conducteur').addEventListener('submit', onChangeHandler);*/
       
        var geocoder = new google.maps.Geocoder();
-
+      
        /*
        * GET LAT AND LNG AND PUT IN THE HIDDEN INPUT
        */
@@ -89,9 +106,13 @@ function initMap() {
 /* 
  * FAIRE LE TRAJET DEMANDE
  */
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+function calculateAndDisplayRoute(directionsService, directionsDisplay, address) {
+	if (address == '')
+		{
+		address = document.getElementById('adresse_conducteur').value;
+		}
     directionsService.route({
-      origin: document.getElementById('adresse_conducteur').value,
+      origin: address,
       destination: '186 route de grenade, 31700',
       travelMode: 'DRIVING'
     }, function(response, status) {

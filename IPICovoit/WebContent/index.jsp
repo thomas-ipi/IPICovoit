@@ -162,7 +162,6 @@
                 <div style="height: 12%; background-color: #343a40; padding: 10px 10px 0 10px"> 
                     <c:import url="/WEB-INF/Shared/footer.jsp" />
                 </div>
-
             </div>
 	</div>
 </div>
