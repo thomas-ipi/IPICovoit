@@ -1,4 +1,6 @@
 var address;
+var marker = [];
+var cpt = 0;
 
 function inscription()
 {
@@ -14,6 +16,7 @@ function closeInscription()
 
 function getTrajects()
 {
+	
 	/* Vérification des champs */
 	$("#adresse_passager").css('border','1px solid grey');
 	$("#passagerAdresseSpan").css('display','none');
@@ -57,11 +60,18 @@ function getTrajects()
            myJson = JSON.parse(data);
            /* Réccupère le premier champs de la première ligne */
            
-           console.log(myJson);
            
-           myJson['trajets'].forEach(function(element) {	
+           try {
+		       for(i=0;i<marker.length;i++)
+		       {
+			    	marker[i].setMap(null);
+		       }
+           } catch (error){console.log(error)}
+	       
+           cpt = 0; 
+           myJson['trajets'].forEach(function(element) {
                var myLatlng = {lat: parseFloat(element[1]), lng:parseFloat(element[2])};
-               var marker = new google.maps.Marker({
+               marker[cpt] = new google.maps.Marker({
              	    position: myLatlng,
              	    title:element[0]
              	}); 
@@ -75,7 +85,7 @@ function getTrajects()
            '<p>'+ element[6] + '</p>'+
            '<p>'+ element[3] + '</p>'+
            '</div>'+
-           '<button type="button" class="btn btn-outline-success btn-sm" onClick="if (confirm(\'Êtes-vous sûr de vouloir réserver ce trajet?\')) { window.location.assign(\''+req+'\') }">Réserver</button>'
+           '<button type="button" class="btn btn-outline-success btn-sm" onClick="if (confirm(\'Êtes-vous sûr de vouloir réserver ce trajet?\')) { window.location.assign(\''+req+'\') }">R&eacute;server</button>'
            '</div>';
            
             
@@ -86,20 +96,18 @@ function getTrajects()
         	    window.location.assign(req);
         	}*/
 
-           var infowindow = new google.maps.InfoWindow({
-             content: contentString
-           });
-
-           marker.setMap(map);
-
-
-
-
-
-
-           marker.addListener('click', function() {
-             infowindow.open(map, marker);
-           });
+	           var infowindow = new google.maps.InfoWindow({
+	             content: contentString
+	           });
+	
+	           marker[cpt].setMap(map);
+	
+	           marker[cpt].addListener('click', function() {
+	             directionsDisplay.setMap(map);
+	             calculateAndDisplayRoute(directionsService, directionsDisplay, element[0]);
+	             infowindow.open(map, this);
+	           });
+	           cpt++;
            });
         }
      });
