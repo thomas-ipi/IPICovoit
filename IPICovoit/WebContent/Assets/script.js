@@ -66,15 +66,25 @@ function getTrajects()
              	    title:element[0]
              	}); 
                
-               var contentString = '<div id="content">'+
-               '<h6 id="firstHeading" class="firstHeading">'+ element[5] + element[4] + '</h6>'+
-               '<div id="bodyContent">'+
-               '<p>'+ element[7] + '</p>'+
-               '<p>'+ element[6] + '</p>'+
-               '<p>'+ element[3] + '</p>'+
-               '</div>'+
-               '<button type="button" class="btn btn-outline-success btn-sm" onClick="if (confirm(\'Êtes-vous sûr de vouloir réserver ce trajet?\')) {window.location.assign(\'Reserver?mailconducteur=??&mailpassager=??\')}">Réserver</button>'
-               '</div>';
+               var req = "Reserver?mailconducteur="+element[9];
+               
+           var contentString = '<div id="content">'+
+           '<h6 id="firstHeading" class="firstHeading">'+ element[5] + ' ' + element[4] + '</h6>'+
+           '<div id="bodyContent">'+
+           '<p>'+ element[7] + '</p>'+
+           '<p>'+ element[6] + '</p>'+
+           '<p>'+ element[3] + '</p>'+
+           '</div>'+
+           '<button type="button" class="btn btn-outline-success btn-sm" onClick="if (confirm(\'Êtes-vous sûr de vouloir réserver ce trajet?\')) { window.location.assign(\''+req+'\') }">Réserver</button>'
+           '</div>';
+           
+           
+        	
+
+
+        	/*if (test) {
+        	    window.location.assign(req);
+        	}*/
 
            var infowindow = new google.maps.InfoWindow({
              content: contentString
