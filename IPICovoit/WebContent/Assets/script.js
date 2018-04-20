@@ -14,6 +14,37 @@ function closeInscription()
 
 function getTrajects()
 {
+	/* Vérification des champs */
+	$("#adresse_passager").css('border','1px solid grey');
+	$("#passagerAdresseSpan").css('display','none');
+	$("#datePickerPassager").css('border','1px solid grey');
+	$("#passagerDateSpan").css('display','none');
+	
+	var passagerAddress = $("#adresse_passager").val();
+	var passagerDate = $("#datePickerPassager").val();
+	
+	var error = false;
+	
+	if(passagerAddress == '')
+	{
+		$("#adresse_passager").css('border','2px solid red');
+		$("#passagerAdresseSpan").css('display','block');
+		error = true;
+	}
+	
+	if(passagerDate == '')
+	{
+		$("#datePickerPassager").css('border','2px solid red');
+		$("#passagerDateSpan").css('display','block');
+		error = true;
+	}
+	
+	if (error == true)
+		{
+		return;
+		}
+	
+	/* Envoi Ajax et création marker */
     type = $('input[name=ar]:checked').val();
     fumeur = $('input[name=f]:checked').val();
     date = $('#datePickerPassager').val();

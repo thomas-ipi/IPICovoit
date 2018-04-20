@@ -33,6 +33,7 @@
                             <i class="fas fa-map-marker"></i>
                             <label for="adresse_maison_campus">Mon adresse</label>
                             <input type="text" id="adresse_passager" name="adresse_maison_campus" class="form-control" placeholder="Renseigne ton adresse" required>
+                        	<span id="passagerAdresseSpan" style="color:red;display:none">Merci de remplir votre adresse</span>
                         </div>
 
                         <!-- ALLER RETOUR -->
@@ -78,6 +79,7 @@
                             <i class="fas fa-calendar-alt"></i>
                             <label for="prenom">Date :</label>
                             <input type="text" class="form-control date_trajet" id="datePickerPassager" name="date_trajet" required>
+                        	<span id="passagerDateSpan" style="color:red;display:none">Merci de choisir une date !</span>
                         </div>
 
                         <!-- SUBMIT FORM -->
