@@ -131,7 +131,7 @@ public class Reservation extends HttpServlet{
 	 		}	
 	 		contenu += "<strong> Merci de prendre contact avec le conducteur pour finaliser la réservation </strong> <br/> "
      		+ "Cordialement";
-	         // Now set the actual message
+	         // Now set the actual message 
 	         message.setContent(contenu, "text/html; charset=utf-8");
 
 	         // Send message
