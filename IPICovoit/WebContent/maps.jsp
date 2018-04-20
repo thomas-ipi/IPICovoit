@@ -65,12 +65,12 @@ function initMap() {
       directionsDisplay.setMap(map);
       
       var myLatlngCampus = {lat: 43.643987, lng:1.386879};
-      marker = new google.maps.Marker({
+      markerCampus = new google.maps.Marker({
     	    position: myLatlngCampus,
     	    title:'Campus Igs Toulouse'
     	});
       
-      marker.setMap(map);
+      markerCampus.setMap(map);
       
       var infosCampusBulle = '<div>Campus IGS Toulouse</div>';
       
@@ -78,7 +78,7 @@ function initMap() {
           content: infosCampusBulle
         });
       
-      marker.addListener('click', function() {
+      markerCampus.addListener('click', function() {
     	  infosCampus.open(map, this);
         });
 

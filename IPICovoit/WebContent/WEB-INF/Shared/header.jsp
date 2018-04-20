@@ -68,7 +68,7 @@ href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 			<form class="form-inline ml-auto" style="margin-left:27%" method="post" action="logout">
 				<a class="ico-profile" href="/IPICovoit/profile.jsp">
 					<i class="fas fa-user-circle"></i>
-					<span class="navbar-nav" style="width:150px;color:white">Bienvenue à toi ${prenom}</span>
+					<span class="navbar-nav" id="spanAccountConnected" style="width:150px;color:white">Bienvenue à toi ${prenom}</span>
 				</a>
 				<button class="btn btn-danger my-2 my-sm-0" type="submit">Deconnexion</button>
 			</form>
