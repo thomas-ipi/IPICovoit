@@ -53,7 +53,7 @@ href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <c:choose>
 		<c:when test = "${nom == null}">
       <form class="form-inline my-2 my-lg-0 ml-auto" method="post" action="login">
-            <input class="form-control mr-sm-2" type="text" placeholder="Identifiant" name="id" style="width:150px">
+            <input class="form-control mr-sm-2" type="text" placeholder="Adresse mail" name="id" style="width:150px">
 			<input class="form-control mr-sm-2" type="password" placeholder="Mot de passe" name="mdp" style="width:150px">
 		<button class="btn btn-danger my-2 my-sm-0" type="submit">Valider</button>
       </form>

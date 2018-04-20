@@ -28,26 +28,11 @@ import com.google.gson.JsonPrimitive;
 
 @WebServlet("/Reserver")
 public class Reservation extends HttpServlet{	
-	private static String FIELD_DRIVER = "id";
+	private static String FIELD_DRIVER = "mailconducteur";
 	private static String FIELD_MAIL = "mail";
 	private static String VIEW_PAGES_URL = "/";
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		try {
-			sendMail("totoipodbdc@gmail.com", "t.bureauducolombier@campus-igs-toulouse.fr");
-			request.setAttribute("successMessage", "Le mail a été envoyé.");
-		}catch(MessagingException e) {
-			request.setAttribute("errorMessage", "Le mail n'a pas pu être envoyé");
-		}
-		this.getServletContext().getRequestDispatcher(VIEW_PAGES_URL).include( request, response );
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		String mailConducteur = request.getParameter(FIELD_DRIVER);
 		HttpSession session = request.getSession();
 		String mailPassager = session.getAttribute(FIELD_MAIL).toString();
@@ -70,12 +55,19 @@ public class Reservation extends HttpServlet{
 			request.setAttribute("errorMessage", "Votre réservation a échouée. Merci de réessayer ultérieurement.");
 		}
 		try {
-			sendMail(mailPassager, "t.bureauducolombier@campus-igs-toulouse.fr");
+			sendMail(mailPassager, mailConducteur);
 			request.setAttribute("successMessage", "Votre réservation a bien été enregistrée, vous avez reçu un mail récapitulatif.");
 		}catch(MessagingException e) {
 			request.setAttribute("errorMessage", "Le mail n'a pas pu être envoyé");
 		}
 		this.getServletContext().getRequestDispatcher(VIEW_PAGES_URL).include( request, response );
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+		
 	}
 	
 	private void sendMail(String passager, String conducteur) throws MessagingException{
