@@ -1,7 +1,8 @@
 	package com.IPICovoit;
 
 	import java.io.IOException;
-	import java.util.HashMap;
+import java.io.PrintWriter;
+import java.util.HashMap;
 	import java.util.Map;
 import java.util.Properties;
 import java.sql.*;
@@ -21,6 +22,10 @@ import javax.servlet.ServletException;
 	import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
+
 @WebServlet("/Reserver")
 public class Reservation extends HttpServlet{	
 	private static String FIELD_DRIVER = "id";
@@ -29,7 +34,7 @@ public class Reservation extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			sendMail();
+			sendMail("totoipodbdc@gmail.com", "t.bureauducolombier@campus-igs-toulouse.fr");
 			request.setAttribute("successMessage", "Le mail a été envoyé.");
 		}catch(MessagingException e) {
 			request.setAttribute("errorMessage", "Le mail n'a pas pu être envoyé");
@@ -63,9 +68,9 @@ public class Reservation extends HttpServlet{
 		this.getServletContext().getRequestDispatcher(VIEW_PAGES_URL).include( request, response );
 	}
 	
-	private void sendMail() throws MessagingException{
+	private void sendMail(String passager, String conducteur) throws MessagingException{
 		// Recipient's email ID needs to be mentioned.
-	      String to = "totoipodbdc@gmail.com";
+	      String to = passager;
 
 	      // Sender's email ID needs to be mentioned
 	      String from = "ipicoivoir@alwaysdata.net";
@@ -104,11 +109,26 @@ public class Reservation extends HttpServlet{
 	         message.setSubject("Vous venez de réserver un trajet chez IPICovoit.");
 
 	         String contenu = "<h1>Merci de votre réservation</h1>"
-	         		+ "Vous pouvez désormais contacter votre conducteur au coordonnées suivantes : <br/>"
-	         		+ "ICI METTRE LES COORDONNEES <br/>"
-	         		+ "<br/>"
-	         		+ "J'aime le veau <br/> "
-	         		+ "Cordialement";
+	         		+ "Vous pouvez désormais contacter votre conducteur au coordonnées suivantes : <br/>";
+	         
+	         String sql = "SELECT * FROM  ipicoivoir_bdd.User WHERE mail = '"+conducteur+"'";
+	 		try {
+	 			Connection con = BDDConnect.connect();
+	 			Statement stmt = con.createStatement();
+	 	        ResultSet rs = stmt.executeQuery(sql);
+	 	        while(rs.next() ) {
+	 	        	contenu += rs.getString("nom")+" "+rs.getString("prenom")+"<br/>"
+        					+ "Adresse : "+rs.getString("adresse")+"<br/>"
+	 	            		+ "Téléphone : "+rs.getString("telephone")+"<br/>"
+            				+ "Mail : "+rs.getString("mail")+"<br/>";
+	 	        	
+	 	        }
+	         } catch (SQLException e) {
+	 			// TODO Auto-generated catch block
+	 			e.printStackTrace();
+	 		}	
+	 		contenu += "J'aime le veau <br/> "
+     		+ "Cordialement";
 	         // Now set the actual message
 	         message.setContent(contenu, "text/html; charset=utf-8");
 
