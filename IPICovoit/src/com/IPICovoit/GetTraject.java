@@ -38,9 +38,9 @@ public class GetTraject extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String type = request.getParameter("type");
-		String fumeur = request.getParameter("fumeur");
-		String date = request.getParameter("date");
+		String type = request.getParameter("arg0");
+		String fumeur = request.getParameter("arg1");
+		String date = request.getParameter("arg2");
 		/*String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet"
 				+ " WHERE retour = '"+type
 				+ "' AND fumeur = '"+fumeur
