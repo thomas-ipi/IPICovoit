@@ -29,10 +29,12 @@ import com.google.gson.JsonPrimitive;
 @WebServlet("/Reserver")
 public class Reservation extends HttpServlet{	
 	private static String FIELD_DRIVER = "id";
-	private static String FIELD_PASSAGER = "id";
+	private static String FIELD_MAIL = "mail";
 	private static String VIEW_PAGES_URL = "/";
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
 		try {
 			sendMail("totoipodbdc@gmail.com", "t.bureauducolombier@campus-igs-toulouse.fr");
 			request.setAttribute("successMessage", "Le mail a été envoyé.");
@@ -47,7 +49,10 @@ public class Reservation extends HttpServlet{
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		String mailConducteur = request.getParameter(FIELD_DRIVER);
-		String mailPassager = request.getParameter(FIELD_PASSAGER);
+		HttpSession session = request.getSession();
+		String mailPassager = session.getAttribute(FIELD_MAIL).toString();
+		
+		
 		String sql = "INSERT INTO ipicoivoir_bdd.Reservation (`mailConducteur`, `mailPassager`) "
 				+ "VALUES ('"+mailConducteur+"', '"+mailPassager+"')";
 		
@@ -64,7 +69,12 @@ public class Reservation extends HttpServlet{
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Votre réservation a échouée. Merci de réessayer ultérieurement.");
 		}
-		
+		try {
+			sendMail(mailPassager, "t.bureauducolombier@campus-igs-toulouse.fr");
+			request.setAttribute("successMessage", "Votre réservation a bien été enregistrée, vous avez reçu un mail récapitulatif.");
+		}catch(MessagingException e) {
+			request.setAttribute("errorMessage", "Le mail n'a pas pu être envoyé");
+		}
 		this.getServletContext().getRequestDispatcher(VIEW_PAGES_URL).include( request, response );
 	}
 	

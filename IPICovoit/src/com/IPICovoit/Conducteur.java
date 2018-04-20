@@ -48,7 +48,7 @@ public class Conducteur extends HttpServlet{
 			String smoker = request.getParameter(FIELD_SMOKE);
 			String debut = request.getParameter(FIELD_BEGIN_TRAJET);
 			String fin = request.getParameter(FIELD_END_TRAJET);
-			SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 			Date dateFin = null;
 			Date dateDebut = null;
 			
