@@ -33,7 +33,7 @@ function getTrajects()
                var marker = new google.maps.Marker({
              	    position: myLatlng,
              	    title:element[0]
-             	});
+             	}); 
                
                var contentString = '<div id="content">'+
                '<div id="siteNotice">'+
