@@ -64,7 +64,7 @@ function initMap() {
       });
       directionsDisplay.setMap(map);
       
-      var myLatlngCampus = {lat: 43.643987, lng:1.386879};
+     var myLatlngCampus = {lat: 43.643987, lng:1.386879};
       markerCampus = new google.maps.Marker({
     	    position: myLatlngCampus,
     	    title:'Campus Igs Toulouse'

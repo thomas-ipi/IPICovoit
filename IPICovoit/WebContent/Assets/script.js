@@ -66,8 +66,9 @@ function getTrajects()
 		       {
 			    	marker[i].setMap(null);
 		       }
-           } catch (error){console.log(error)}
-	       console.log(marker.length);
+
+           } catch (error){console.log(error)} 
+	       
            cpt = 0; 
            myJson['trajets'].forEach(function(element) {
                var myLatlng = {lat: parseFloat(element[1]), lng:parseFloat(element[2])};
@@ -76,6 +77,7 @@ function getTrajects()
              	    title:element[0]
              	}); 
                
+
            var req = "Reserver?mailconducteur="+element[9];
        
            if ($('#spanAccountConnected').text() != '')
@@ -98,8 +100,7 @@ function getTrajects()
 	           '<p>'+ element[6] + '</p>'+
 	           '<p>'+ element[3] + '</p>'+
 	           '</div>'+
-	           '<button type="button" class="btn btn-outline-success btn-sm" onClick="if (confirm(\'Êtes-vous sûr de vouloir réserver ce trajet?\')) { window.location.assign(\''+req+'\') }" disabled>R&eacute;server</button>'
-	           '</div><div style="color:grey">Veuillez-vous connecter pour effectuer une reservtion</div>';
+	           '<div style="color:red">Veuillez-vous connecter pour effectuer une reservation</div>';
 		   }
             
         	
