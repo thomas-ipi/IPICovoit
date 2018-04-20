@@ -1,11 +1,9 @@
-<div id="map_canvas"></div>
- 
 <script>
 
 
 /*
  * INITIALISER MAPS
- */
+ */ 
 function initMap() {
 	var styles = {
 	        'monTheme': [
@@ -53,7 +51,7 @@ function initMap() {
 	 
 	var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
-    var map = new google.maps.Map(document.getElementById('map_canvas'), {
+    var map = new google.maps.Map(document.getElementById('my_google_maps'), {
         zoom: 12,
         center: new google.maps.LatLng(43.643987, 1.386879),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
