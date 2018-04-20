@@ -33,4 +33,4 @@
    <span class="navbar-brand" style="color: white; font-size:0.7vw">Groupe IGS, Ecole IPI</span><br>
    <span class="navbar-brand" style="color: white; font-size:0.7vw">Toulouse - 186 Route de Grenade</span><br>
    <span class="navbar-brand" style="color: white; font-size:0.7vw">31703 Blagnac Cedex</span>
-</div>
+</div> 

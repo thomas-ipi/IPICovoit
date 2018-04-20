@@ -3,7 +3,7 @@
 
 /*
  * INITIALISER MAPS
- */
+ */ 
 function initMap() {
 	var styles = {
 	        'monTheme': [

@@ -63,7 +63,7 @@ href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
           </li>
       </ul>
       	</c:when>
-		<c:when test = "${nom != null}">
+		<c:when test = "${nom != null}"> 
 		
 			<form class="form-inline ml-auto" style="margin-left:27%" method="post" action="logout">
 				<a class="ico-profile" href="/IPICovoit/profile.jsp">
