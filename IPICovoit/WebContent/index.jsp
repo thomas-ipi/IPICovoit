@@ -41,11 +41,11 @@
                         <span>Aller/Retour :</span>
                         <br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="Aller" checked>
+                            <input class="form-check-input" type="radio" name="ar" id="inlineRadio1" value="aller" checked>
                             <label class="form-check-label" for="inlineRadio1">Aller</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="Retour">
+                            <input class="form-check-input" type="radio" name="ar" id="inlineRadio2" value="retour">
                             <label class="form-check-label" for="inlineRadio2">Retour</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -60,12 +60,12 @@
                         <span>Fumeur/Non-fumeur :</span>
                         <br/>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="f" id="inlineRadio4" value="Fumeur">
-                            <label class="form-check-label" for="inlineRadio4" value="Fumeur">Fumeur</label>
+                            <input class="form-check-input" type="radio" name="f" id="inlineRadio4" value="fumeur">
+                            <label class="form-check-label" for="inlineRadio4" value="fumeur">Fumeur</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="f" id="inlineRadio5" value="Non_Fumeur" checked>
-                            <label class="form-check-label" for="inlineRadio5" value="Non_fumeur">Non-fumeur</label>
+                            <input class="form-check-input" type="radio" name="f" id="inlineRadio5" value="nonFumeur" checked>
+                            <label class="form-check-label" for="inlineRadio5" value="nonFumeur">Non-fumeur</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="f" id="inlineRadio6" value="Peu_importe">

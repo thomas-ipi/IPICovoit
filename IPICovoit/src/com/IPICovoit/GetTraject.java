@@ -6,6 +6,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,11 +44,21 @@ public class GetTraject extends HttpServlet {
 		String type = request.getParameter("arg0");
 		String fumeur = request.getParameter("arg1");
 		String date = request.getParameter("arg2");
-		/*String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet"
+		SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat formatter1 = new SimpleDateFormat("dd-MM-yyyy");
+		try {
+			Date laDate = formatter1.parse(date);
+			date = formatter2.format(laDate);
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet"
 				+ " WHERE retour = '"+type
 				+ "' AND fumeur = '"+fumeur
-				+ "' AND date = '"+date+"'";*/
-		String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet";
+				+ "' AND date = '"+date+"'";
+		//String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet";
 		try {
 			Connection con = BDDConnect.connect();
 			Statement stmt = con.createStatement();
