@@ -66,7 +66,7 @@ function getTrajects()
 		       {
 			    	marker[i].setMap(null);
 		       }
-           } catch (error){console.log(error)}
+           } catch (error){console.log(error)} 
 	       
            cpt = 0; 
            myJson['trajets'].forEach(function(element) {
