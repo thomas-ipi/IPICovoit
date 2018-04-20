@@ -54,10 +54,13 @@ public class GetTraject extends HttpServlet {
 			e1.printStackTrace();
 		}
 		
-		String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet"
+		String sql = "SELECT pointDeDepart, pointDeDepartLat, pointDeDepartLng, date,"
+				+ "nom, prenom, fumeur, retour, nbplaces "
+				+ "FROM  ipicoivoir_bdd.Trajet t , ipicoivoir_bdd.User u"
 				+ " WHERE retour = '"+type
 				+ "' AND fumeur = '"+fumeur
-				+ "' AND date = '"+date+"'";
+				+ "' AND date = '"+date+"'"
+				+ "AND t.mailUserConducteur = u.mail";
 		//String sql = "SELECT * FROM  ipicoivoir_bdd.Trajet";
 		try {
 			Connection con = BDDConnect.connect();
@@ -72,6 +75,12 @@ public class GetTraject extends HttpServlet {
 		        row.add(new JsonPrimitive(rs.getString("pointDeDepartLat")));
 		        row.add(new JsonPrimitive(rs.getString("pointDeDepartLng")));
 		        row.add(new JsonPrimitive(rs.getString("date")));
+		        row.add(new JsonPrimitive(rs.getString("nom")));
+		        row.add(new JsonPrimitive(rs.getString("prenom")));
+		        row.add(new JsonPrimitive(rs.getString("fumeur")));
+		        row.add(new JsonPrimitive(rs.getString("retour")));
+		        row.add(new JsonPrimitive(rs.getString("nbplaces")));
+		        
 		        data.add(row);
 	        }
 	        jsonResponse.add("trajets", data);
