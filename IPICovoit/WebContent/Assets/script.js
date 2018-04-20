@@ -68,7 +68,7 @@ function getTrajects()
 		       }
            } catch (error){console.log(error)}
 	       
-           cpt = 0;
+           cpt = 0; 
            myJson['trajets'].forEach(function(element) {
                var myLatlng = {lat: parseFloat(element[1]), lng:parseFloat(element[2])};
                marker[cpt] = new google.maps.Marker({
