@@ -78,7 +78,7 @@ function getTrajects()
            '<button type="button" class="btn btn-outline-success btn-sm" onClick="if (confirm(\'Êtes-vous sûr de vouloir réserver ce trajet?\')) { window.location.assign(\''+req+'\') }">Réserver</button>'
            '</div>';
            
-           
+            
         	
 
 
