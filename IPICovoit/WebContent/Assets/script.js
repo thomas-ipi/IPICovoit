@@ -85,7 +85,7 @@ function getTrajects()
            '<p>'+ element[6] + '</p>'+
            '<p>'+ element[3] + '</p>'+
            '</div>'+
-           '<button type="button" class="btn btn-outline-success btn-sm" onClick="if (confirm(\'Êtes-vous sûr de vouloir réserver ce trajet?\')) { window.location.assign(\''+req+'\') }">R&eacute;server</button>'
+           '<button type="button" class="btn btn-outline-success btn-sm" onClick="if (confirm(\'&#202;tes-vous s&#251;r de vouloir r&eacute;server ce trajet?\')) { window.location.assign(\''+req+'\') }">R&eacute;server</button>'
            '</div>';
            
             
